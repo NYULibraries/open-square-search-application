@@ -5,30 +5,30 @@
             class="content"
         >
             <h2 class="osq-pane-heading is-size-5">
-                Limit by Topic
+                Limit by Subject
             </h2>
 
             <div class="osq-facets-list">
-                <div class="osq-topics osq-facets-group-visible">
+                <div class="osq-subjects osq-facets-group-visible">
                     <a
-                        v-for="topic in topicFacetItemsAlwaysVisible"
-                        :id="topic.name"
-                        :key="topic.name"
+                        v-for="subject in subjectFacetItemsAlwaysVisible"
+                        :id="subject.name"
+                        :key="subject.name"
                         href="#"
-                        @click="clickTopicFacetItem"
+                        @click="clickSubjectFacetItem"
                     >
-                        {{ topic.name }}
+                        {{ subject.name }}
                         <span class="osq-hitcount">
-                            ({{ topic.numHits }})
+                            ({{ subject.numHits }})
                         </span>
                     </a>
                 </div>
 
                 <a
-                    v-show="( ! showAllTopics ) && ( topicsFacetList.length > topicsFacetListLimit )"
+                    v-show="( ! showAllSubjects ) && ( subjectsFacetList.length > subjectsFacetListLimit )"
                     class="listui seemore"
                     href="#"
-                    @click="showAllTopics = ! showAllTopics"
+                    @click="showAllSubjects = ! showAllSubjects"
                 >
                     <i
                         class="fa fa-angle-double-down"
@@ -37,28 +37,28 @@
                 </a>
 
                 <div
-                    v-show="( showAllTopics ) && ( topicsFacetList.length > topicsFacetListLimit )"
-                    class="osq-topics osq-facets-group-togglable"
+                    v-show="( showAllSubjects ) && ( subjectsFacetList.length > subjectsFacetListLimit )"
+                    class="osq-subjects osq-facets-group-togglable"
                 >
                     <a
-                        v-for="topic in topicFacetItemsToggleable"
-                        :id="topic.name"
-                        :key="topic.name"
+                        v-for="subject in subjectFacetItemsToggleable"
+                        :id="subject.name"
+                        :key="subject.name"
                         href="#"
-                        @click="clickTopicFacetItem"
+                        @click="clickSubjectFacetItem"
                     >
-                        {{ topic.name }}
+                        {{ subject.name }}
                         <span class="osq-hitcount">
-                            ({{ topic.numHits }})
+                            ({{ subject.numHits }})
                         </span>
                     </a>
                 </div>
 
                 <a
-                    v-show="( showAllTopics ) && ( topicsFacetList.length > topicsFacetListLimit )"
+                    v-show="( showAllSubjects ) && ( subjectsFacetList.length > subjectsFacetListLimit )"
                     class="listui seemore"
                     href="#"
-                    @click="showAllTopics = ! showAllTopics"
+                    @click="showAllSubjects = ! showAllSubjects"
                 >
                     <i
                         class="fa fa-angle-double-up"
@@ -83,14 +83,14 @@ export default {
             required : true,
             default  : false,
         },
-        topicsFacetList      : {
+        subjectsFacetList      : {
             type     : Array,
             required : true,
             default  : function () {
                 return null;
             },
         },
-        topicsFacetListLimit : {
+        subjectsFacetListLimit : {
             type     : Number,
             required : true,
             default  : function () {
@@ -100,34 +100,34 @@ export default {
     },
     data() {
         return {
-            showAllTopics : false,
+            showAllSubjects : false,
         };
     },
     computed : {
-        topicFacetItemsAlwaysVisible() {
-            return this.topicsFacetList.slice( 0, this.topicsFacetListLimit );
+        subjectFacetItemsAlwaysVisible() {
+            return this.subjectsFacetList.slice( 0, this.subjectsFacetListLimit );
         },
-        topicFacetItemsToggleable() {
-            if ( this.showAllTopics ) {
-                return this.topicsFacetList.slice( this.topicsFacetListLimit );
+        subjectFacetItemsToggleable() {
+            if ( this.showAllSubjects ) {
+                return this.subjectsFacetList.slice( this.subjectsFacetListLimit );
             } else {
                 return [];
             }
         },
     },
     watch : {
-        topicsFacetList( newList, oldList ) {
-            this.showAllTopics = false;
+        subjectsFacetList( newList, oldList ) {
+            this.showAllSubjects = false;
         },
     },
     methods : {
         ...mapActions(
             [
-                'addSelectedTopicFacetItem',
+                'addSelectedSubjectFacetItem',
             ]
         ),
-        clickTopicFacetItem( event ) {
-            this.addSelectedTopicFacetItem( event.currentTarget.id );
+        clickSubjectFacetItem( event ) {
+            this.addSelectedSubjectFacetItem( event.currentTarget.id );
         },
     },
 };

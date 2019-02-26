@@ -49,19 +49,19 @@
 
             <div
                 v-show="selectedPageNumber && ! errorPreviewEpub && ! errorPreviewPage"
-                class="osq-topicsonthispage"
+                class="osq-subjectsonthispage"
             >
-                <h3>Topics on this page</h3>
+                <h3>Subjects on this page</h3>
 
                 <ul>
                     <li
-                        v-for="topicOnPage in topicsOnPage"
-                        :key="topicOnPage"
+                        v-for="subjectOnPage in subjectsOnPage"
+                        :key="subjectOnPage"
                     >
                         <!-- eslint-disable vue/no-v-html -->
                         <a
                             href="#"
-                            v-html="topicOnPage"
+                            v-html="subjectOnPage"
                         >
                         <!-- eslint-disable -->
                         </a>
@@ -69,10 +69,10 @@
                 </ul>
 
                 <div
-                    v-if="topicsOnPage === null || topicsOnPage.length === 0"
-                    class="osq-notopics"
+                    v-if="subjectsOnPage === null || subjectsOnPage.length === 0"
+                    class="osq-nosubjects"
                 >
-                    No topics are associated with this page.
+                    No subjects are associated with this page.
                 </div>
             </div>
 
@@ -139,7 +139,7 @@ export default {
             errorPreviewPage   : false,
             pageText           : null,
             selectedPageNumber : null,
-            topicsOnPage       : null,
+            subjectsOnPage       : null,
         };
     },
     computed : {
@@ -147,7 +147,7 @@ export default {
             [
                 'query',
                 'queryFields',
-                'selectedTopicFacetItems',
+                'selectedSubjectFacetItems',
             ]
         ),
     },
@@ -160,7 +160,7 @@ export default {
                 this.barChart.barChartData = [];
                 this.pageText = null;
                 this.selectedPageNumber = null;
-                this.topicsOnPage = null;
+                this.subjectsOnPage = null;
 
                 return;
             }
@@ -179,7 +179,7 @@ export default {
                     this.isbn,
                     this.query,
                     this.queryFields,
-                    this.selectedTopicFacetItems,
+                    this.selectedSubjectFacetItems,
                 );
             } catch( e ) {
                 this.errorPreviewEpub = true;
@@ -223,8 +223,8 @@ export default {
                 Object.keys( response.highlighting )[ 0 ]
             ];
 
-            let topicHighlights, topicsOnPage = [];
-            let topicNamesLists;
+            let subjectHighlights, subjectsOnPage = [];
+            let subjectNamesLists;
 
             if ( highlights.pageText ) {
                 this.pageText = highlights.pageText[ 0 ];
@@ -232,7 +232,7 @@ export default {
                 this.pageText = doc.pageText;
             }
 
-            if ( highlights.topicNamesForDisplay ) {
+            if ( highlights.subjectNamesForDisplay ) {
                 // Sample of prettified JSON string (without wrapping quotes):
                 // [
                 //     [
@@ -249,18 +249,18 @@ export default {
                 //     ]
                 // ]
 
-                topicHighlights = JSON.parse( highlights.topicNamesForDisplay );
-                topicHighlights.forEach( ( topicHighlightArray ) => {
-                    const preferredName = topicHighlightArray.shift();
-                    const alternateNames = topicHighlightArray;
+                subjectHighlights = JSON.parse( highlights.subjectNamesForDisplay );
+                subjectHighlights.forEach( ( subjectHighlightArray ) => {
+                    const preferredName = subjectHighlightArray.shift();
+                    const alternateNames = subjectHighlightArray;
 
                     if ( alternateNames.length === 0 ) {
                         // No alternate names
-                        topicsOnPage.push( preferredName );
+                        subjectsOnPage.push( preferredName );
                     } else {
                         if ( namesListContainsHighlights( alternateNames ) ) {
                             // Display alternate names - they contain highlights
-                            topicsOnPage.push(
+                            subjectsOnPage.push(
                                 preferredName +
                                 ' <span class="osq-alt-names">(also: ' +
                                 alternateNames.join( ALTERNATE_NAMES_LIST_SEPARATOR ) +
@@ -268,30 +268,30 @@ export default {
                             );
                         } else {
                             // Do not display alternate names - they do not contain highlights
-                            topicsOnPage.push( preferredName );
+                            subjectsOnPage.push( preferredName );
                         }
                     }
                 } );
 
-                this.topicsOnPage = topicsOnPage;
-            } else if ( doc.topicNamesForDisplay ) {
-                topicNamesLists = JSON.parse( doc.topicNamesForDisplay );
-                this.topicsOnPage = topicNamesLists.map(
-                    ( topicNamesList ) => {
+                this.subjectsOnPage = subjectsOnPage;
+            } else if ( doc.subjectNamesForDisplay ) {
+                subjectNamesLists = JSON.parse( doc.subjectNamesForDisplay );
+                this.subjectsOnPage = subjectNamesLists.map(
+                    ( subjectNamesList ) => {
                         // The display/preferred name is the first element
-                        return topicNamesList.shift();
+                        return subjectNamesList.shift();
                     }
                 );
             } else {
-                this.topicsOnPage = [];
+                this.subjectsOnPage = [];
             }
         },
-        async solrPreviewEpub( isbn, query, queryFields, selectedTopicFacetFields ) {
+        async solrPreviewEpub( isbn, query, queryFields, selectedSubjectFacetFields ) {
             const response = await this.$solrPreviewEpub(
                 isbn,
                 query,
                 queryFields,
-                selectedTopicFacetFields,
+                selectedSubjectFacetFields,
             );
 
             return response;

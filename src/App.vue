@@ -14,8 +14,8 @@
                 <div class="columns osq-panes">
                     <FacetPane
                         :display="facetPane.display"
-                        :topics-facet-list="facetPane.topicsFacetList"
-                        :topics-facet-list-limit="facetPane.topicsFacetListLimit"
+                        :subjects-facet-list="facetPane.subjectsFacetList"
+                        :subjects-facet-list-limit="facetPane.subjectsFacetListLimit"
                     />
 
                     <Spinner :display="spinner.display" />
@@ -58,10 +58,10 @@ const QUERY_FIELDS = [
         value    : 'pageText',
     },
     {
-        dciLabel : 'topics',
-        label    : 'Topics',
-        name     : 'topics',
-        value    : 'topicNames',
+        dciLabel : 'subjects',
+        label    : 'Subjects',
+        name     : 'subjects',
+        value    : 'subjectNames',
     },
 ];
 
@@ -78,13 +78,13 @@ export default {
     data() {
         return {
             disableWatch : {
-                selectedTopicFacetItems : false,
+                selectedSubjectFacetItems : false,
             },
 
             facetPane : {
                 display              : false,
-                topicsFacetList      : [],
-                topicsFacetListLimit : 15,
+                subjectsFacetList      : [],
+                subjectsFacetListLimit : 15,
             },
             previewPane : {
                 display : false,
@@ -116,15 +116,15 @@ export default {
             [
                 'query',
                 'queryFields',
-                'selectedTopicFacetItems',
+                'selectedSubjectFacetItems',
             ]
         ),
     },
     watch : {
-        selectedTopicFacetItems() {
-            if ( this.disableWatch.selectedTopicFacetItems ) {
+        selectedSubjectFacetItems() {
+            if ( this.disableWatch.selectedSubjectFacetItems ) {
                 // We allow only one-time disabling of this watch
-                this.disableWatch.selectedTopicFacetItems = false;
+                this.disableWatch.selectedSubjectFacetItems = false;
 
                 return;
             }
@@ -135,10 +135,10 @@ export default {
     methods : {
         ...mapActions(
             [
-                'clearSelectedTopicFacetItems',
+                'clearSelectedSubjectFacetItems',
                 'setQuery',
                 'setQueryFields',
-                'setSelectedTopicFacetItems',
+                'setSelectedSubjectFacetItems',
             ]
         ),
         clearPreviewPane() {
@@ -166,33 +166,33 @@ export default {
             );
         },
         setFacetPaneFromSolrResponse( solrResponse ) {
-            const topicFacetItems = solrResponse.facet_counts.facet_fields.topicNames_facet;
+            const subjectFacetItems = solrResponse.facet_counts.facet_fields.subjectNames_facet;
 
-            if ( topicFacetItems ) {
-                this.facetPane.topicsFacetList = [];
-                for ( let i = 0; i < topicFacetItems.length; i = i + 2 ) {
-                    const topic = topicFacetItems[ i ];
-                    const numHits = topicFacetItems[ i + 1 ];
-                    this.facetPane.topicsFacetList.push(
+            if ( subjectFacetItems ) {
+                this.facetPane.subjectsFacetList = [];
+                for ( let i = 0; i < subjectFacetItems.length; i = i + 2 ) {
+                    const subject = subjectFacetItems[ i ];
+                    const numHits = subjectFacetItems[ i + 1 ];
+                    this.facetPane.subjectsFacetList.push(
                         {
-                            name    : topic,
+                            name    : subject,
                             numHits : numHits.toLocaleString(),
                         }
                     );
                 }
             }
 
-            // Remove topics already selected by user
-            this.selectedTopicFacetItems.forEach(
-                ( selectedTopic ) => {
-                    const found = this.facetPane.topicsFacetList.findIndex(
+            // Remove subjects already selected by user
+            this.selectedSubjectFacetItems.forEach(
+                ( selectedSubject ) => {
+                    const found = this.facetPane.subjectsFacetList.findIndex(
                         ( element ) => {
-                            return element.name === selectedTopic;
+                            return element.name === selectedSubject;
                         }
                     );
 
                     if ( found !== -1 ) {
-                        this.facetPane.topicsFacetList.splice( found, 1 );
+                        this.facetPane.subjectsFacetList.splice( found, 1 );
                     }
                 }
             );
@@ -212,10 +212,10 @@ export default {
             this.resultsPane.results  = solrResponse.grouped.isbn.groups;
         },
         submitSearchForm() {
-            // If we don't disable selectedTopicFacetItems watch, clearSelectedTopicFacetItems
+            // If we don't disable selectedSubjectFacetItems watch, clearSelectedSubjectFacetItems
             // will trigger another search.
-            this.disableWatch.selectedTopicFacetItems = true;
-            this.clearSelectedTopicFacetItems();
+            this.disableWatch.selectedSubjectFacetItems = true;
+            this.clearSelectedSubjectFacetItems();
             this.search();
         },
         async search() {
@@ -235,7 +235,7 @@ export default {
                 response = await this.$solrSearch(
                     this.query,
                     this.queryFields,
-                    this.selectedTopicFacetItems
+                    this.selectedSubjectFacetItems
                 );
             } catch( e ) {
                 this.spinner.display = false;

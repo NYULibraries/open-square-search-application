@@ -83,7 +83,7 @@ export default {
             [
                 'query',
                 'queryFields',
-                'selectedTopicFacetItems',
+                'selectedSubjectFacetItems',
             ]
         ),
     },

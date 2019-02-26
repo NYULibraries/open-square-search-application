@@ -16,17 +16,17 @@
                     </span>
 
                     <span
-                        v-for="topicDCI in topicDCIs"
-                        :key="topicDCI.id"
+                        v-for="subjectDCI in subjectDCIs"
+                        :key="subjectDCI.id"
                         class="tag"
                     >
-                        Topic:&nbsp;<span class="osq-topic">
-                            {{ topicDCI.topic }}
+                        Subject:&nbsp;<span class="osq-subject">
+                            {{ subjectDCI.subject }}
                         </span>
                         <button
-                            :id="topicDCI.id"
+                            :id="subjectDCI.id"
                             class="delete is-small"
-                            @click="clickDismissTopicDCI"
+                            @click="clickDismissSubjectDCI"
                         ></button>
                     </span>
                 </div>
@@ -62,7 +62,7 @@ export default {
             [
                 'query',
                 'queryFields',
-                'selectedTopicFacetItems',
+                'selectedSubjectFacetItems',
             ]
         ),
         searchDCI() {
@@ -83,11 +83,11 @@ export default {
                 return null;
             }
         },
-        topicDCIs() {
-            return this.selectedTopicFacetItems.map( ( topic ) => {
+        subjectDCIs() {
+            return this.selectedSubjectFacetItems.map( ( subject ) => {
                 return {
-                    id    : topic,
-                    topic : topic,
+                    id    : subject,
+                    subject : subject,
                 };
             } );
         },
@@ -100,21 +100,21 @@ export default {
     methods : {
         ...mapActions(
             [
-                'removeSelectedTopicFacetItem',
+                'removeSelectedSubjectFacetItem',
                 'setQuery',
                 'setQueryFields',
             ]
         ),
         clickDismissSearchDCI( event ) {
-            // Change to blank search if no topic DCIs
-            if ( this.selectedTopicFacetItems.length === 0 ) {
+            // Change to blank search if no subject DCIs
+            if ( this.selectedSubjectFacetItems.length === 0 ) {
                 this.setQuery( '' );
             } else {
-                // If topic DCIs and query is already "*", do nothing
+                // If subject DCIs and query is already "*", do nothing
                 if ( this.query === '*' ) {
                     return;
                 } else {
-                    // If topic DCIs and query was not already "*", change to "*"
+                    // If subject DCIs and query was not already "*", change to "*"
                     // and do a new search
                     this.setQuery( '*' );
                 }
@@ -122,8 +122,8 @@ export default {
 
             this.$emit( 'search-dci-dismiss', event.currentTarget.id );
         },
-        clickDismissTopicDCI( event ) {
-            this.removeSelectedTopicFacetItem( event.currentTarget.id );
+        clickDismissSubjectDCI( event ) {
+            this.removeSelectedSubjectFacetItem( event.currentTarget.id );
         },
     },
 };
