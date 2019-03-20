@@ -37,9 +37,6 @@ export default {
     },
     data() {
         return {
-            disableWatch : {
-                selectedSubjectFacetItems : false,
-            },
             resultsPane : {
                 display  : false,
                 error    : false,
