@@ -74,7 +74,7 @@ async function solrSearch( query, queryFields ) {
         'facet.mincount' : '1',
         'facet.sort'     : 'count',
         facet            : 'on',
-        fl               : 'title,subtitle,description,author,subject,identifier,coverHref,thumbHref',
+        fl               : 'title,subtitle,description,author,date,subject,identifier,coverHref,thumbHref',
         hl               : true,
         'hl.fl'          : 'description,subject,title',
         qf               : queryFields.join( '%20' ),
