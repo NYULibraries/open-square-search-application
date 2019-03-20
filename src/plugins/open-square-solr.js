@@ -60,7 +60,7 @@ async function doFetch( params ) {
     }
 }
 
-async function solrSearch( query, queryFields, selectedSubjectsFacetItems ) {
+async function solrSearch( query, queryFields ) {
     // "#" sometimes gets added to the end of the URL, probably because search results have
     // <a> tags with href="#"
     if ( errorSimulation && errorSimulation.startsWith( ERROR_SIMULATION_SEARCH ) ) {
@@ -81,16 +81,6 @@ async function solrSearch( query, queryFields, selectedSubjectsFacetItems ) {
         rows             : 1999,
         sort             : 'score%20desc,title_sort%20asc',
     };
-
-    if ( selectedSubjectsFacetItems && selectedSubjectsFacetItems.length > 0 ) {
-        params.fq = selectedSubjectsFacetItems.map( ( selectedSubjectsFacetItem ) => {
-            return encodeURIComponent(
-                'subject:"'  +
-                selectedSubjectsFacetItem.replace( /"/g, '\\"' ) +
-                '"'
-            );
-        } );
-    }
 
     try {
         return doFetch( params );

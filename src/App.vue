@@ -12,12 +12,6 @@
             />
             <div class="container is-fluid">
                 <div class="columns osq-panes">
-                    <FacetPane
-                        :display="facetPane.display"
-                        :subjects-facet-list="facetPane.subjectsFacetList"
-                        :subjects-facet-list-limit="facetPane.subjectsFacetListLimit"
-                    />
-
                     <Spinner :display="spinner.display" />
 
                     <ResultsPane
@@ -41,7 +35,6 @@
 </template>
 
 <script>
-import FacetPane from './components/FacetPane';
 import PreviewPane from './components/PreviewPane';
 import ResultsPane from './components/ResultsPane';
 import SearchEcho from './components/SearchEcho';
@@ -68,7 +61,6 @@ const QUERY_FIELDS = [
 export default {
     name       : 'App',
     components : {
-        FacetPane,
         PreviewPane,
         ResultsPane,
         SearchEcho,
@@ -79,12 +71,6 @@ export default {
         return {
             disableWatch : {
                 selectedSubjectFacetItems : false,
-            },
-
-            facetPane : {
-                display              : false,
-                subjectsFacetList      : [],
-                subjectsFacetListLimit : 15,
             },
             previewPane : {
                 display : false,
@@ -116,29 +102,14 @@ export default {
             [
                 'query',
                 'queryFields',
-                'selectedSubjectFacetItems',
             ]
         ),
-    },
-    watch : {
-        selectedSubjectFacetItems() {
-            if ( this.disableWatch.selectedSubjectFacetItems ) {
-                // We allow only one-time disabling of this watch
-                this.disableWatch.selectedSubjectFacetItems = false;
-
-                return;
-            }
-
-            this.search();
-        },
     },
     methods : {
         ...mapActions(
             [
-                'clearSelectedSubjectFacetItems',
                 'setQuery',
                 'setQueryFields',
-                'setSelectedSubjectFacetItems',
             ]
         ),
         clearPreviewPane() {
@@ -165,38 +136,6 @@ export default {
                 this.resultsPane.results[ 0 ].doclist.docs[ 0 ].title,
             );
         },
-        setFacetPaneFromSolrResponse( solrResponse ) {
-            const subjectFacetItems = solrResponse.facet_counts.facet_fields.subjectNames_facet;
-
-            if ( subjectFacetItems ) {
-                this.facetPane.subjectsFacetList = [];
-                for ( let i = 0; i < subjectFacetItems.length; i = i + 2 ) {
-                    const subject = subjectFacetItems[ i ];
-                    const numHits = subjectFacetItems[ i + 1 ];
-                    this.facetPane.subjectsFacetList.push(
-                        {
-                            name    : subject,
-                            numHits : numHits.toLocaleString(),
-                        }
-                    );
-                }
-            }
-
-            // Remove subjects already selected by user
-            this.selectedSubjectFacetItems.forEach(
-                ( selectedSubject ) => {
-                    const found = this.facetPane.subjectsFacetList.findIndex(
-                        ( element ) => {
-                            return element.name === selectedSubject;
-                        }
-                    );
-
-                    if ( found !== -1 ) {
-                        this.facetPane.subjectsFacetList.splice( found, 1 );
-                    }
-                }
-            );
-        },
         setPanesDisplay( panes, state ) {
             panes.forEach( ( pane ) => {
                 pane.display = state;
@@ -211,15 +150,10 @@ export default {
             this.resultsPane.results  = solrResponse.response.docs;
         },
         submitSearchForm() {
-            // If we don't disable selectedSubjectFacetItems watch, clearSelectedSubjectFacetItems
-            // will trigger another search.
-            this.disableWatch.selectedSubjectFacetItems = true;
-            this.clearSelectedSubjectFacetItems();
             this.search();
         },
         async search() {
             this.hidePanes(
-                this.facetPane,
                 this.resultsPane,
                 this.previewPane,
             );
@@ -234,7 +168,6 @@ export default {
                 response = await this.$solrSearch(
                     this.query,
                     this.queryFields,
-                    this.selectedSubjectFacetItems
                 );
             } catch( e ) {
                 this.spinner.display = false;
@@ -246,14 +179,12 @@ export default {
                 return;
             }
 
-            this.setFacetPaneFromSolrResponse( response );
             this.setResultsPaneFromSolrResponse( response );
 
             this.spinner.display = false;
 
             if ( this.resultsPane.results.length > 0 ) {
                 this.displayPanes(
-                    this.facetPane,
                     this.resultsPane,
                     this.previewPane,
                 );
