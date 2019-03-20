@@ -5,11 +5,6 @@
             @submit="submitSearchForm"
         />
         <div v-cloak>
-            <SearchEcho
-                :display="searchEcho.display"
-                :query-fields-u-i="searchForm.queryFieldsUI"
-                @search-dci-dismiss="clickDismissSearchDCI"
-            />
             <div class="container is-fluid">
                 <div class="columns osq-panes">
                     <Spinner :display="spinner.display" />
@@ -37,7 +32,6 @@
 <script>
 import PreviewPane from './components/PreviewPane';
 import ResultsPane from './components/ResultsPane';
-import SearchEcho from './components/SearchEcho';
 import SearchForm from './components/SearchForm';
 import Spinner from './components/Spinner';
 
@@ -63,7 +57,6 @@ export default {
     components : {
         PreviewPane,
         ResultsPane,
-        SearchEcho,
         SearchForm,
         Spinner,
     },
@@ -83,10 +76,6 @@ export default {
                 numBooks : 0,
                 numPages : 0,
                 results  : [],
-            },
-            searchEcho : {
-                display       : true,
-                queryFieldsUI : QUERY_FIELDS,
             },
             searchForm : {
                 queryUI       : '',
