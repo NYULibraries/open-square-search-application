@@ -22,9 +22,9 @@
                 <!--BOOK-->
                 <div
                     v-for="result in results"
-                    :id="result.groupValue"
-                    :key="result.groupValue"
-                    :name="result.doclist.docs[ 0 ].title"
+                    :id="result.identifier"
+                    :key="result.identifier"
+                    :name="result.title"
                     class="box"
                 >
                     <article class="media osq-book">
