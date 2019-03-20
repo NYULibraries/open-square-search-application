@@ -1,5 +1,5 @@
 <template>
-    <div :class="isbnOfSelectedEpub ? previewPaneLoadedClass : previewPaneNotLoadedClass">
+    <div class="column enm-pane enm-pane-results is-half">
         <!--RESULTS-->
         <template v-show="display">
             <!-- v-show is necessary on this <header> element for some reason.
@@ -101,13 +101,6 @@ export default {
             },
         },
     },
-    data() {
-        return {
-            isbnOfSelectedEpub        : null,
-            previewPaneLoadedClass    : 'column osq-pane osq-pane-results is-4',
-            previewPaneNotLoadedClass : 'column osq-pane osq-pane-results is-half',
-        };
-    },
     computed : {
         numBooksFormatted : function () {
             return this.numBooks ? this.numBooks.toLocaleString() : '';
@@ -125,16 +118,6 @@ export default {
             } else {
                 return 'Results: None';
             }
-        },
-    },
-    methods : {
-        previewEpub( event ) {
-            const isbn = event.currentTarget.id;
-            const title = event.currentTarget.getAttribute( 'name' );
-
-            this.isbnOfSelectedEpub = isbn;
-
-            this.$emit( 'epub-click', isbn, title );
         },
     },
 };

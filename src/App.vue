@@ -15,13 +15,6 @@
                         :num-books="resultsPane.numBooks"
                         :num-pages="resultsPane.numPages"
                         :results="resultsPane.results"
-                        @epub-click="setPreviewPane"
-                    />
-                    <PreviewPane
-                        :display="previewPane.display"
-                        :isbn="previewPane.isbn"
-                        :title="previewPane.title"
-                        @load-first-matched-page-link-click="previewFirstEpub"
                     />
                 </div>
             </div>
@@ -30,7 +23,6 @@
 </template>
 
 <script>
-import PreviewPane from './components/PreviewPane';
 import ResultsPane from './components/ResultsPane';
 import SearchForm from './components/SearchForm';
 import Spinner from './components/Spinner';
@@ -55,7 +47,6 @@ const QUERY_FIELDS = [
 export default {
     name       : 'App',
     components : {
-        PreviewPane,
         ResultsPane,
         SearchForm,
         Spinner,
@@ -64,11 +55,6 @@ export default {
         return {
             disableWatch : {
                 selectedSubjectFacetItems : false,
-            },
-            previewPane : {
-                display : false,
-                isbn    : '',
-                title   : '',
             },
             resultsPane : {
                 display  : false,
@@ -101,9 +87,6 @@ export default {
                 'setQueryFields',
             ]
         ),
-        clearPreviewPane() {
-            this.setPreviewPane( '', '' );
-        },
         clearResultsPane() {
             this.resultsPane.error    = false;
             this.resultsPane.numBooks = 0;
@@ -119,20 +102,10 @@ export default {
         hidePanes( ...panes ) {
             this.setPanesDisplay( panes, false );
         },
-        previewFirstEpub() {
-            this.setPreviewPane(
-                this.resultsPane.results[ 0 ].groupValue,
-                this.resultsPane.results[ 0 ].doclist.docs[ 0 ].title,
-            );
-        },
         setPanesDisplay( panes, state ) {
             panes.forEach( ( pane ) => {
                 pane.display = state;
             } );
-        },
-        setPreviewPane( isbn, title ) {
-            this.previewPane.isbn = isbn;
-            this.previewPane.title = title;
         },
         setResultsPaneFromSolrResponse( solrResponse ) {
             this.resultsPane.numBooks = solrResponse.response.numFound;
@@ -144,10 +117,8 @@ export default {
         async search() {
             this.hidePanes(
                 this.resultsPane,
-                this.previewPane,
             );
 
-            this.clearPreviewPane();
             this.clearResultsPane();
 
             this.spinner.display = true;
@@ -175,7 +146,6 @@ export default {
             if ( this.resultsPane.results.length > 0 ) {
                 this.displayPanes(
                     this.resultsPane,
-                    this.previewPane,
                 );
             } else {
                 this.displayPanes( this.resultsPane );
