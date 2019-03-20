@@ -26,7 +26,6 @@
                     :key="result.groupValue"
                     :name="result.doclist.docs[ 0 ].title"
                     class="box"
-                    @click="previewEpub"
                 >
                     <article class="media osq-book">
                         <div class="media-left">
