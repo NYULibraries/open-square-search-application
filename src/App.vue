@@ -73,9 +73,6 @@ export default {
             this.resultsPane.numPages = 0;
             this.resultsPane.results  = [];
         },
-        clickDismissSearchDCI() {
-            this.search();
-        },
         displayPanes( ...panes ) {
             this.setPanesDisplay( panes, true );
         },
