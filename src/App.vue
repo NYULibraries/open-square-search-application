@@ -12,7 +12,6 @@
                         :display="resultsPane.display"
                         :error="resultsPane.error"
                         :num-books="resultsPane.numBooks"
-                        :num-pages="resultsPane.numPages"
                         :results="resultsPane.results"
                     />
                 </div>
@@ -70,7 +69,6 @@ export default {
         clearResultsPane() {
             this.resultsPane.error    = false;
             this.resultsPane.numBooks = 0;
-            this.resultsPane.numPages = 0;
             this.resultsPane.results  = [];
         },
         displayPanes( ...panes ) {

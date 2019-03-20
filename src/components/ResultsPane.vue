@@ -87,11 +87,6 @@ export default {
             required : true,
             default  : null,
         },
-        numPages : {
-            type     : Number,
-            required : true,
-            default  : null,
-        },
         results  : {
             type     : Array,
             required : true,
@@ -104,16 +99,13 @@ export default {
         numBooksFormatted : function () {
             return this.numBooks ? this.numBooks.toLocaleString() : '';
         },
-        numPagesFormatted : function () {
-            return this.numPages ? this.numPages.toLocaleString() : '';
-        },
         resultsHeader : function () {
             if ( this.error ) {
                 return 'Sorry, a server error has occurred.  Please try your search again later.';
             }
 
             if ( this.results && this.results.length > 0 ) {
-                return 'Results: ' + this.numPagesFormatted + ' pages in ' + this.numBooksFormatted + ' books';
+                return 'Results: ' + this.numBooksFormatted + ' books';
             } else {
                 return 'Results: None';
             }
