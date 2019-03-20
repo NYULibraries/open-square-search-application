@@ -10,7 +10,7 @@ require( './assets/sass/bulma.scss' );
 Vue.config.productionTip = false;
 
 const openSquareSolrOptions = {
-    solrCorePath : '/solr3_discovery/nyupress/',
+    solrCorePath : '/solr/open-square-metadata/',
     solrHost     : process.env.VUE_APP_SOLR_HOST,
     solrPort     : process.env.VUE_APP_SOLR_PORT,
     solrProtocol : process.env.VUE_APP_SOLR_PROTOCOL,

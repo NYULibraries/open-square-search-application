@@ -207,9 +207,8 @@ export default {
             this.previewPane.title = title;
         },
         setResultsPaneFromSolrResponse( solrResponse ) {
-            this.resultsPane.numBooks = solrResponse.grouped.isbn.groups.length;
-            this.resultsPane.numPages = solrResponse.grouped.isbn.matches;
-            this.resultsPane.results  = solrResponse.grouped.isbn.groups;
+            this.resultsPane.numBooks = solrResponse.response.numFound;
+            this.resultsPane.results  = solrResponse.response.docs;
         },
         submitSearchForm() {
             // If we don't disable selectedSubjectFacetItems watch, clearSelectedSubjectFacetItems

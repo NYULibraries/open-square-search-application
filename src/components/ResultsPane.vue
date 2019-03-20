@@ -50,19 +50,14 @@
                             </a>
                             <h3 class="title is-spaced">
                                 <a href="#">
-                                    {{ result.doclist.docs[ 0 ].title }}
+                                    {{ result.title }}
                                 </a>
                             </h3>
                             <div class="meta">
-                                {{ result.doclist.docs[ 0 ].authors.join( '; ' ) +
-                                    '; ' +
-                                    result.doclist.docs[ 0 ].publisher }}
+                                {{ result.author[ 0 ] }}; {{ result.date }}
                             </div>
-                            <div class="matches">
-                                {{ result.doclist.numFound.toLocaleString() }} matched pages
-                            </div>
-                            <div class="relevance">
-                                Maximum page relevance score: <span>{{ result.doclist.maxScore }}</span>
+                            <div class="meta">
+                                {{ result.description }}
                             </div>
                         </div>
                     </article>

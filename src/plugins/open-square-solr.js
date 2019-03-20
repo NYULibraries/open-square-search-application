@@ -1,6 +1,6 @@
-const DEFAULT_SOLR_CORE_PATH = '/solr3_discovery/nyupress/';
-const DEFAULT_SOLR_HOST      = 'discovery.dlib.nyu.edu';
-const DEFAULT_SOLR_PORT      = 8080;
+const DEFAULT_SOLR_CORE_PATH = '/solr/open-square-metadata/';
+const DEFAULT_SOLR_HOST      = 'discovery1.dlib.nyu.edu';
+const DEFAULT_SOLR_PORT      = 80;
 const DEFAULT_SOLR_PROTOCOL  = 'http';
 
 const ERROR_SIMULATION_SEARCH       = 'search';
