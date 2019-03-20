@@ -14,14 +14,14 @@
                                         class="osq-visually-hidden"
                                         for="osq-searchinput"
                                     >
-                                        Search inside all books
+                                        Search for books
                                     </label>
                                     <input
                                         id="osq-searchinput"
                                         v-model="queryUI"
                                         class="input is-large"
                                         type="text"
-                                        placeholder="Search inside all books"
+                                        placeholder="Search for books"
                                     >
                                     <span class="icon is-small is-left">
                                         <i class="fa fa-search"></i>
