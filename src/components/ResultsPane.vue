@@ -31,7 +31,7 @@
                         <div class="media-left">
                             <figure class="image osq-thumbnail">
                                 <img
-                                    :src="'/enm/search/assets/covers/' + result.groupValue + '.jpg'"
+                                    :src="'/oabooks-reader/epub_content/' + result.identifier + '/ops/images/' + result.identifier + '-th.jpg'"
                                     alt=""
                                 >
                             </figure>
