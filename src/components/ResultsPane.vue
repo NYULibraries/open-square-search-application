@@ -119,9 +119,4 @@ export default {
         max-height: 64px;
         width: auto !important;
     }
-
-    .osq-page-active {
-        fill: lightgrey;
-        stroke: black;
-    }
 </style>
