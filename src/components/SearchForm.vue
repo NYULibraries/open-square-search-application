@@ -28,27 +28,6 @@
                                     </span>
                                 </p>
                             </div>
-
-                            <div class="column is-narrow">
-                                <template v-for="queryFieldUI in queryFieldsUI">
-                                    <input
-                                        :id="queryFieldUI.name + 'Chx'"
-                                        :key="queryFieldUI.name"
-                                        v-model="selectedQueryFields"
-                                        :name="queryFieldUI.name + 'Chx'"
-                                        :value="queryFieldUI.value"
-                                        type="checkbox"
-                                        class="is-medium is-checkbox"
-                                    >
-                                    <label
-                                        :key="queryFieldUI.label"
-                                        :for="queryFieldUI.name + 'Chx'"
-                                        class=""
-                                    >
-                                        {{ queryFieldUI.label }}
-                                    </label>
-                                </template>
-                            </div>
                         </div>
                     </div>
                 </form>
@@ -62,27 +41,15 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     name  : 'SearchForm',
-    props : {
-        queryFieldsUI : {
-            type     : Array,
-            required : true,
-            default  : null,
-        },
-    },
     data() {
         return {
             queryUI : '',
-
-            selectedQueryFields : this.queryFieldsUI.map(
-                ( queryField ) => { return queryField.value; }
-            ),
         };
     },
     computed : {
         ...mapGetters(
             [
                 'query',
-                'queryFields',
             ]
         ),
     },
@@ -106,22 +73,10 @@ export default {
         ...mapActions(
             [
                 'setQuery',
-                'setQueryFields',
             ]
         ),
         submitSearchForm() {
-            if ( this.selectedQueryFields.length === 0 ) {
-                alert( 'Please check one or more boxes: ' +
-                       this.queryFieldsUI.map(
-                           ( e ) => { return e.label; }
-                       ).join( ', ' )
-                );
-
-                return;
-            }
-
             this.setQuery( this.queryUI );
-            this.setQueryFields( this.selectedQueryFields );
 
             this.$emit( 'submit' );
         },

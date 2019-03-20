@@ -1,7 +1,6 @@
 <template>
     <div id="app">
         <SearchForm
-            :query-fields-u-i="searchForm.queryFieldsUI"
             @submit="submitSearchForm"
         />
         <div v-cloak>
@@ -29,21 +28,6 @@ import Spinner from './components/Spinner';
 
 import { mapGetters, mapActions } from 'vuex';
 
-const QUERY_FIELDS = [
-    {
-        dciLabel : 'full texts',
-        label    : 'Full Text',
-        name     : 'fulltext',
-        value    : 'pageText',
-    },
-    {
-        dciLabel : 'subjects',
-        label    : 'Subjects',
-        name     : 'subjects',
-        value    : 'subjectNames',
-    },
-];
-
 export default {
     name       : 'App',
     components : {
@@ -64,8 +48,7 @@ export default {
                 results  : [],
             },
             searchForm : {
-                queryUI       : '',
-                queryFieldsUI : QUERY_FIELDS,
+                queryUI : '',
             },
             spinner : {
                 display : false,
