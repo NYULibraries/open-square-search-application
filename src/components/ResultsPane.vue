@@ -7,7 +7,7 @@
                  in this <template>.
             -->
             <header v-show="display">
-                <h2 class="is-size-4">
+                <h2>
                     {{ resultsHeader }}
                 </h2>
             </header>
@@ -37,16 +37,6 @@
                             </figure>
                         </div>
                         <div class="media-content">
-                            <!-- The link to load the preview is repeated.
-                                 Tte first one is for fancy "whole div" rollovers
-                                 and the second is for accessibility.
-                                 TODO: Check with Laura to see if the above still holds. -->
-                            <a
-                                class="osq-divlink"
-                                href="#"
-                            >
-&nbsp;
-                            </a>
                             <h3 class="title is-spaced">
                                 <a href="#">
                                     {{ result.title }}
