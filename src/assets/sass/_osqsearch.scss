@@ -49,7 +49,7 @@ section.searchecho {
       font-size: .9rem;
 
       //height: 2rem;
-   
+
     }
 
     font-size: .9rem;
@@ -121,23 +121,6 @@ section.searchecho {
     margin-bottom: 20px;
   }
 
-  .box {
-    position: relative;
-
-    a.osq-divlink {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    &:hover {
-      background-color: whitesmoke;
-      box-shadow: 0 2px 3px rgba(10, 10, 10, 0.3), 0 0 0 1px rgba(10, 10, 10, 0.3);
-    }
-  }
 }
 
 .osq-book {
