@@ -1,5 +1,5 @@
 <template>
-    <div class="column enm-pane enm-pane-results is-half">
+    <div>
         <!--RESULTS-->
         <template v-show="display">
             <!-- v-show is necessary on this <header> element for some reason.
@@ -25,25 +25,38 @@
                     :id="result.identifier"
                     :key="result.identifier"
                     :name="result.title"
-                    class="box"
                 >
-                    <article class="media osq-book">
-                        <div class="media-left">
-                            <figure class="image osq-thumbnail">
+                    <article class="book-summary">
+                        <div
+                            class="thumb"
+                            role="presentation"
+                        >
+                            <a
+                                :href="'/books/' + result.identifier + '/'"
+                                tabindex="-1"
+                            >
                                 <img
                                     :src="`/open-square-reader/epub_content/${ result.identifier }/ops/images/${ result.identifier }-th.jpg`"
                                     alt=""
                                 >
-                            </figure>
+                            </a>
                         </div>
-                        <div class="media-content">
-                            <h3 class="title is-spaced">
+                        <div class="meta">
+                            <div class="book-title-group">
                                 <a href="#">
-                                    {{ result.title }}
+                                    <div class="book-title">
+                                        {{ result.title }}
+                                    </div>
+                                    <div class="book-subtitle">
+                                        {{ result.subtitle }}</div>
                                 </a>
-                            </h3>
-                            <div class="meta">
-                                {{ result.author[ 0 ] }}; {{ result.date }}
+                            </div>
+
+                            <div class="author">
+                                {{ result.author[ 0 ] }}
+                            </div>
+                            <div class="pubdate">
+                                <span>Published:</span> {{ result.date }}
                             </div>
                             <div class="meta">
                                 {{ result.description }}
