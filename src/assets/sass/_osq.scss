@@ -114,23 +114,6 @@ hr {
 }
 
 
-footer {
-  box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.12);
-  position: relative;
-  text-align: center;
-  height:2rem;
-  a:link,
-  a:visited {
-    color: #555;
-    text-transform: uppercase;
-  }
-  p {
-    color: #555;
-    font-size: .8rem;
-    padding-top: 6px;
-  }
-}
-
 .loader {
   border: none !important;
 }
