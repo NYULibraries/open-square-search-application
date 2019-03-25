@@ -1,37 +1,35 @@
 <template>
     <section class="hero is-primary osq-searchbox-hero">
         <div class="hero-body">
-            <div class="container is-fluid">
-                <form
-                    class="osq-searchform"
-                    @submit.prevent="submitSearchForm"
-                >
-                    <div class="osq-searchbox">
-                        <div class="field columns level">
-                            <div class="column level-item">
-                                <p class="control has-icons-left">
-                                    <label
-                                        class="osq-visually-hidden"
-                                        for="osq-searchinput"
-                                    >
-                                        Search for books
-                                    </label>
-                                    <input
-                                        id="osq-searchinput"
-                                        v-model="queryUI"
-                                        class="input is-large"
-                                        type="text"
-                                        placeholder="Search for books"
-                                    >
-                                    <span class="icon is-small is-left">
-                                        <i class="fa fa-search"></i>
-                                    </span>
-                                </p>
-                            </div>
+            <form
+                class="osq-searchform"
+                @submit.prevent="submitSearchForm"
+            >
+                <div class="osq-searchbox">
+                    <div class="field columns level">
+                        <div class="column level-item">
+                            <p class="control has-icons-left">
+                                <label
+                                    class="osq-visually-hidden"
+                                    for="osq-searchinput"
+                                >
+                                    Search for books
+                                </label>
+                                <input
+                                    id="osq-searchinput"
+                                    v-model="queryUI"
+                                    class="input is-large"
+                                    type="text"
+                                    placeholder="Search for books"
+                                >
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </p>
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </div>
     </section>
 </template>
