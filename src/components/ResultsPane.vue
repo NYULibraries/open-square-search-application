@@ -7,7 +7,7 @@
                  in this <template>.
             -->
             <header v-show="display">
-                <h2>
+                <h2 class="osq-resultsheader">
                     {{ resultsHeader }}
                 </h2>
             </header>
@@ -34,10 +34,12 @@
                             <a
                                 :href="'/books/' + result.identifier + '/'"
                                 tabindex="-1"
+                                aria-hidden="true"
                             >
                                 <img
                                     :src="'http://opensquare.nyupress.org/open-square-reader/epub_content/' + result.identifier + '/ops/images/' + result.identifier + '-th.jpg'"
                                     alt=""
+                                    class="img-fluid"
                                 >
                             </a>
                         </div>
@@ -116,10 +118,3 @@ export default {
     },
 };
 </script>
-
-<style>
-    .book-cover-thumbnail {
-        max-height: 64px;
-        width: auto !important;
-    }
-</style>
