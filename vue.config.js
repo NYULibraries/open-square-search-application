@@ -1,5 +1,5 @@
 module.exports = {
-    baseUrl             : '/search/',
+    publicPath          : '/search/',
     outputDir           : 'dist',
     assetsDir           : 'assets',
     indexPath           : 'index.html',
