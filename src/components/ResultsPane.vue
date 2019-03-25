@@ -31,7 +31,7 @@
                         <div class="media-left">
                             <figure class="image osq-thumbnail">
                                 <img
-                                    :src="'/open-square-reader/epub_content/' + result.identifier + '/ops/images/' + result.identifier + '-th.jpg'"
+                                    :src="`/open-square-reader/epub_content/${ result.identifier }/ops/images/${ result.identifier }-th.jpg`"
                                     alt=""
                                 >
                             </figure>
@@ -70,8 +70,8 @@
 
 <script>
 export default {
-    name  : 'ResultsPane',
-    props : {
+    name   : 'ResultsPane',
+    props  : {
         display  : {
             type     : Boolean,
             required : true,
@@ -94,6 +94,11 @@ export default {
                 return null;
             },
         },
+    },
+    data() {
+        return {
+            publicPath : process.env.BASE_URL,
+        };
     },
     computed : {
         numBooksFormatted : function () {
