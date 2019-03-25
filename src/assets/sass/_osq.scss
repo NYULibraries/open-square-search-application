@@ -4,16 +4,16 @@ $topicFont: 'Crimson Text',
 Georgia,
 serif;
 
-@mixin topicTreatment() {
+@mixin topic-treatment() {
   font-family: $topicFont;
   font-size: 1rem;
+
   &:link,
   &:visited {
     color: teal !important;
   }
 
   &[href]:hover {
-    text-decoration: underline;
     color: $hoverColorTopics !important;
     text-decoration: none;
     .osq-hitcount {
@@ -99,10 +99,11 @@ hr {
 
 .osq-topnav {
   //box-shadow: 0 4px 2px -2px $bordergray;
-  box-shadow: 0px 1px 4px #08403f;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 1px 4px #08403f;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
   position: relative;
   z-index: 2;
+
   nav {
     background-color: transparent;
   }
@@ -115,7 +116,7 @@ hr {
 
 
 .loader {
-  border: none !important;
+  border: 0 !important;
 }
 
 .osq-notopics {
@@ -131,7 +132,6 @@ hr {
 
 .is-radio[type="radio"]+label::before,
 .is-checkbox[type="checkbox"]+label::before {
-  background-color: #c3d8d7;
   background-color: #ffffff;
 }
 
