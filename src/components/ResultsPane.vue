@@ -37,7 +37,7 @@
                                 aria-hidden="true"
                             >
                                 <img
-                                    :src="'http://opensquare.nyupress.org/open-square-reader/epub_content/' + result.identifier + '/ops/images/' + result.identifier + '-th.jpg'"
+                                    :src="`/open-square-reader/epub_content/${ result.identifier }/ops/images/${ result.identifier }-th.jpg`"
                                     alt=""
                                     class="img-fluid"
                                 >
@@ -99,6 +99,11 @@ export default {
                 return null;
             },
         },
+    },
+    data() {
+        return {
+            publicPath : process.env.BASE_URL,
+        };
     },
     computed : {
         numBooksFormatted : function () {
