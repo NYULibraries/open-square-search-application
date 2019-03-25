@@ -3,39 +3,8 @@
   width: 75%;
 }
 
-.searchecho {
-  background-color: #166f6e94;
-}
-
-.columns.osq-searchecho {
-  padding-top: 1rem;
-  margin-bottom: 0;
-
-  .column {
-    padding-bottom: 0;
-  }
-
-  .delete {
-    margin-left: .4em;
-    margin-right: -3px;
-    top: -.5rem;
-  }
-
-  .tag:not(:last-child) {
-    margin-right: 8px;
-  }
-}
-/****************************************************************************************************************************************/
-
 .osq-searchbox-hero .hero-body {
   padding: 2rem 0;
-}
-
-.osq-pane {
-  //background-color: yellow;
-  // height: calc(98vh - 260px);
-  // overflow-y: auto;
-  // transition: width 0.2s ease-in-out;
 }
 
 .osq-pane-facets {
@@ -78,7 +47,6 @@
 .osq-pane-results {
   padding-top: 30px;
   header {
-  //  @include clearfix;
     margin-bottom: 20px;
   }
 }
@@ -111,44 +79,4 @@
     text-transform: uppercase;
   }
 
-  .osq-pageno {
-    float: right;
-  }
-
-  .osq-buttons {
-    width: 100%;
-
-    > a {
-      width: 49%;
-    }
-  }
-
-  .osq-topicsonthispage {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid $bordergray;
-
-    // font-family: serif;
-    h3 {
-      color: #171616;
-      font-size: .9rem;
-      line-height: 2;
-    }
-
-    a {
-      @include topic-treatment;
-    }
-
-    li {
-      display: inline;
-
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-
-    .osq-alt-names {
-      color: #555;
-    }
-  }
 }
