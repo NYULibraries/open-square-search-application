@@ -1,48 +1,68 @@
-.osq-searchbox {
-  max-width: 1500px;
-  width: 75%;
+
+$height: 45px !default;
+$submit-button-bg: #ffffff !default;
+$border-color:#ccc;
+.hero-body {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
 }
 
-.osq-searchbox-hero .hero-body {
-  padding: 2rem 0;
+
+.osq-searchbox-hero {
+  padding: 50px 0;
+
 }
 
-.osq-pane-facets {
-  padding-top: 30px;
-  padding-bottom: 60px;
+.osq-search {
+  display: flex;
+  max-width: 900px;
+  width: 100%;
+  border: 1px solid $border-color;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16);
 
-  .listui {
-    color: black;
-    display: block;
-    font-size: .85rem;
-    padding: 5px 0;
+  > * {
+    height: $height;
 
-    i {
-      padding-right: 3px;
-      display: inline-block;
+    // transparent border overrides browser defaults
+    border: 1px solid transparent;
+    font-size: 1rem;
+
+    &:focus {
+      // higher z-index specified so that
+      // outline/border for focus will be fully visible --
+      // not "under" another element
+      z-index: 2;
     }
   }
 
-  .osq-pane-heading {
-    padding-top: .54rem;
+  #osq-searchinput {
+    flex: 1 1 auto;
+    padding: 2px 1rem;
   }
 
-  .content {
-    padding-right: 5px;
-  }
+  [type="submit"] {
+    background-color: $submit-button-bg;
+    flex: 0 1 70px;
 
-  .osq-topics a {
-    display: block;
-    padding-left: 15px;
-    line-height: 1.3;
-    padding: 2px 2px 2px 15px;
-    text-indent: -15px;
+    &:hover {
+      cursor: pointer;
+      background-color: black;
 
-    @include topic-treatment;
+      path {
+        fill: white;
+      }
+    }
 
-    word-break: break-word;
+    svg {
+      width: auto;
+      height: 97%;
+    }
   }
 }
+
+
 
 .osq-pane-results {
   padding-top: 30px;
@@ -52,7 +72,7 @@
 }
 
 .osq-resultsheader {
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin-bottom: 1rem;
 }
 
@@ -73,10 +93,4 @@
     font-size: 1.1rem;
     margin-bottom: .4rem;
   }
-
-  h5 {
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
 }
