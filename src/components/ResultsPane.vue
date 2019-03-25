@@ -75,8 +75,8 @@
 
 <script>
 export default {
-    name  : 'ResultsPane',
-    props : {
+    name   : 'ResultsPane',
+    props  : {
         display  : {
             type     : Boolean,
             required : true,
