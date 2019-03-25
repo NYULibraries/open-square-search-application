@@ -60,10 +60,10 @@ hr {
   a:visited {
     color: #4a4a4a;
   }
-  @include until(500px) {
-    font-size: .9rem;
-    flex-shrink: 1;
-  }
+  // @include until(500px) {
+  //   font-size: .9rem;
+  //   flex-shrink: 1;
+  // }
 }
 
 .skipnav {
