@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="osq-results-hold">
         <!--RESULTS-->
         <template v-show="display">
             <!-- v-show is necessary on this <header> element for some reason.
