@@ -1,23 +1,18 @@
 
 $height: 45px !default;
 $submit-button-bg: #ffffff !default;
-$border-color:#ccc;
-.hero-body {
-  text-align: center;
-  display: inline-block;
-  width: 100%;
-  max-width: 400px;
-}
+$border-color: #cccccc;
+$hero-background: #00968840;
+$submit-button-hover: #000000;
+$submit-button-hover-path: #ffffff;
 
-
-.osq-searchbox-hero {
-  padding: 50px 0;
-
+.book-summary {
+  margin-bottom: 2rem;
 }
 
 .osq-search {
   display: flex;
-  max-width: 900px;
+  max-width: 50rem;
   width: 100%;
   border: 1px solid $border-color;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .16);
@@ -48,10 +43,10 @@ $border-color:#ccc;
 
     &:hover {
       cursor: pointer;
-      background-color: black;
+      background-color: $submit-button-hover;
 
       path {
-        fill: white;
+        fill: $submit-button-hover-path;
       }
     }
 
@@ -62,10 +57,18 @@ $border-color:#ccc;
   }
 }
 
+.osq-search, .osq-results-hold{
+  max-width: 50rem;
+  //margin: auto;
+}
 
+.osq-panes {
+  padding-top: 2rem;
+}
 
 .osq-pane-results {
-  padding-top: 30px;
+  padding-top: 2rem;
+
   header {
     margin-bottom: 20px;
   }
@@ -73,24 +76,5 @@ $border-color:#ccc;
 
 .osq-resultsheader {
   font-size: 1.7rem;
-  margin-bottom: 1rem;
-}
-
-.osq-results {
-  max-width: 50rem;
-}
-
-.osq-pane-preview {
-  padding: 35px 50px 50px;
-  margin-right: .75rem;
-
-  .title {
-    font-size: 1.3rem;
-    margin-bottom: .4rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-    margin-bottom: .4rem;
-  }
+  margin-bottom: 2rem;
 }
