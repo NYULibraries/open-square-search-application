@@ -5,7 +5,7 @@ import App from './App';
 import OpenSquareSolr from './plugins/open-square-solr';
 import store from './store';
 
-require( './assets/sass/bulma.scss' );
+require( './assets/sass/search-style.scss' );
 
 Vue.config.productionTip = false;
 
