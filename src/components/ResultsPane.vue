@@ -45,7 +45,9 @@
                         </div>
                         <div class="meta">
                             <div class="book-title-group">
-                                <a href="#">
+                                <a
+                                    :href="`/books/${ result.identifier }`"
+                                >
                                     <div class="book-title">
                                         {{ result.title }}
                                     </div>
