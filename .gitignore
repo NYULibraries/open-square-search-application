@@ -21,7 +21,11 @@ yarn-error.log*
 *.sw*
 
 # https://jira.nyu.edu/jira/browse/NYUP-594
-# For getting thumbnails to display when developing using webpack-dev-server
+# For getting static site assets and cover thumbnails to load when developing
+# using webpack-dev-server
+public/css
+public/fonts
+public/images
 public/open-square-reader
 
 /tests/browser/errorShots/
