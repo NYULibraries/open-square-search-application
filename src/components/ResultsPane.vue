@@ -89,6 +89,13 @@ export default {
             required : true,
             default  : false,
         },
+        highlights   : {
+            type     : Object,
+            required : true,
+            default  : function () {
+                return null;
+            },
+        },
         numBooks : {
             type     : Number,
             required : true,
