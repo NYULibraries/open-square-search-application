@@ -25,6 +25,33 @@ import Spinner from './components/Spinner';
 
 import { mapGetters, mapActions } from 'vuex';
 
+const QUERY_FIELDS = {
+    author : {
+        highlight : true,
+        weight    : 4,
+    },
+    date : {
+        highlight : true,
+        weight    : 1,
+    },
+    description : {
+        highlight : true,
+        weight    : 2,
+    },
+    series : {
+        highlight : true,
+        weight    : 3,
+    },
+    subtitle : {
+        highlight : true,
+        weight    : 4,
+    },
+    title : {
+        highlight : true,
+        weight    : 4,
+    },
+};
+
 export default {
     name       : 'App',
     components : {
@@ -56,6 +83,9 @@ export default {
                 'queryFields',
             ]
         ),
+    },
+    mounted : function () {
+        this.setQueryFields( QUERY_FIELDS );
     },
     methods : {
         ...mapActions(
