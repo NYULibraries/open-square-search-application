@@ -69,12 +69,7 @@ async function solrSearch( query, queryFields ) {
 
     const params = {
         q                : query,
-        'facet.field'    : 'subject',
-        'facet.limit'    : '-1',
-        'facet.mincount' : '1',
-        'facet.sort'     : 'count',
-        facet            : 'on',
-        fl               : 'title,subtitle,description,author,date,subject,identifier,coverHref,thumbHref',
+        fl               : 'title,subtitle,description,author,date,identifier,coverHref,thumbHref',
         hl               : true,
         'hl.fl'          : getHlFlFromQueryFields( queryFields ),
         'hl.fragsize'    : 500,
