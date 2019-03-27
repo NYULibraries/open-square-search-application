@@ -39,7 +39,7 @@ const QUERY_FIELDS = {
         highlight : true,
         weight    : 2,
     },
-    series : {
+    series_names  : {
         highlight : true,
         weight    : 3,
     },
