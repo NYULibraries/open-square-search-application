@@ -23,7 +23,7 @@ async function doFetch( params ) {
     params = Object.assign( params, {
         // Avoid `q : undefined` if q was deleted above or never present
         q       : params.q !== undefined ? encodeURIComponent( params.q ) : '',
-        defType : 'dismax',
+        defType : 'edismax',
         indent  : 'on',
         wt      : 'json',
     } );
