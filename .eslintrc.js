@@ -103,6 +103,7 @@ module.exports = {
         'vue/max-attributes-per-line'        : 'error',
         'vue/mustache-interpolation-spacing' : 'error',
         'vue/name-property-casing'           : 'error',
+        'vue/no-v-html'                      : 'off',
         'vue/require-default-prop'           : 'error',
         'vue/require-prop-types'             : 'error',
         'vue/v-bind-style'                   : 'error',
