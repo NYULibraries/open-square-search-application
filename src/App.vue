@@ -4,17 +4,15 @@
             @submit="submitSearchForm"
         />
         <div v-cloak>
-            <div class="container is-fluid">
-                <div class="columns osq-panes">
-                    <Spinner :display="spinner.display" />
+            <div class="osq-panes">
+                <Spinner :display="spinner.display" />
 
-                    <ResultsPane
-                        :display="resultsPane.display"
-                        :error="resultsPane.error"
-                        :num-books="resultsPane.numBooks"
-                        :results="resultsPane.results"
-                    />
-                </div>
+                <ResultsPane
+                    :display="resultsPane.display"
+                    :error="resultsPane.error"
+                    :num-books="resultsPane.numBooks"
+                    :results="resultsPane.results"
+                />
             </div>
         </div>
     </div>

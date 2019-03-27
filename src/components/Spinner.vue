@@ -6,7 +6,7 @@
     <div
         v-show="display"
         id="spinner"
-        class="column osq-pane osq-pane-results is-half"
+        class="osq-pane osq-pane-results"
     >
         <div class="overlay-loader">
             <div class="loader">

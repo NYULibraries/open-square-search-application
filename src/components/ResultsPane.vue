@@ -1,5 +1,5 @@
 <template>
-    <div class="column enm-pane enm-pane-results is-half">
+    <div class="osq-results-hold">
         <!--RESULTS-->
         <template v-show="display">
             <!-- v-show is necessary on this <header> element for some reason.
@@ -7,7 +7,7 @@
                  in this <template>.
             -->
             <header v-show="display">
-                <h2 class="is-size-4">
+                <h2 class="osq-resultsheader">
                     {{ resultsHeader }}
                 </h2>
             </header>
@@ -25,35 +25,42 @@
                     :id="result.identifier"
                     :key="result.identifier"
                     :name="result.title"
-                    class="box"
                 >
-                    <article class="media osq-book">
-                        <div class="media-left">
-                            <figure class="image osq-thumbnail">
+                    <article class="book-summary">
+                        <div
+                            class="thumb"
+                            role="presentation"
+                        >
+                            <a
+                                :href="'/books/' + result.identifier + '/'"
+                                tabindex="-1"
+                                aria-hidden="true"
+                            >
                                 <img
                                     :src="`/open-square-reader/epub_content/${ result.identifier }/ops/images/${ result.identifier }-th.jpg`"
                                     alt=""
+                                    class="img-fluid"
                                 >
-                            </figure>
-                        </div>
-                        <div class="media-content">
-                            <!-- The link to load the preview is repeated.
-                                 Tte first one is for fancy "whole div" rollovers
-                                 and the second is for accessibility.
-                                 TODO: Check with Laura to see if the above still holds. -->
-                            <a
-                                class="osq-divlink"
-                                href="#"
-                            >
-&nbsp;
                             </a>
-                            <h3 class="title is-spaced">
-                                <a href="#">
-                                    {{ result.title }}
+                        </div>
+                        <div class="meta">
+                            <div class="book-title-group">
+                                <a
+                                    :href="`/books/${ result.identifier }`"
+                                >
+                                    <div class="book-title">
+                                        {{ result.title }}
+                                    </div>
+                                    <div class="book-subtitle">
+                                        {{ result.subtitle }}</div>
                                 </a>
-                            </h3>
-                            <div class="meta">
-                                {{ result.author[ 0 ] }}; {{ result.date }}
+                            </div>
+
+                            <div class="author">
+                                {{ result.author[ 0 ] }}
+                            </div>
+                            <div class="pubdate">
+                                <span>Published:</span> {{ result.date }}
                             </div>
                             <div class="meta">
                                 {{ result.description }}
@@ -118,10 +125,3 @@ export default {
     },
 };
 </script>
-
-<style>
-    .book-cover-thumbnail {
-        max-height: 64px;
-        width: auto !important;
-    }
-</style>
