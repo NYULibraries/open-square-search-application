@@ -10,6 +10,7 @@
                 <ResultsPane
                     :display="resultsPane.display"
                     :error="resultsPane.error"
+                    :highlights="resultsPane.highlights"
                     :num-books="resultsPane.numBooks"
                     :results="resultsPane.results"
                 />
@@ -62,11 +63,12 @@ export default {
     data() {
         return {
             resultsPane : {
-                display  : false,
-                error    : false,
-                numBooks : 0,
-                numPages : 0,
-                results  : [],
+                display    : false,
+                error      : false,
+                highlights : {},
+                numBooks   : 0,
+                numPages   : 0,
+                results    : [],
             },
             searchForm : {
                 queryUI : '',
@@ -111,8 +113,9 @@ export default {
             } );
         },
         setResultsPaneFromSolrResponse( solrResponse ) {
-            this.resultsPane.numBooks = solrResponse.response.numFound;
-            this.resultsPane.results  = solrResponse.response.docs;
+            this.resultsPane.highlights = solrResponse.highlighting;
+            this.resultsPane.numBooks   = solrResponse.response.numFound;
+            this.resultsPane.results    = solrResponse.response.docs;
         },
         submitSearchForm() {
             this.search();

@@ -76,7 +76,11 @@ async function solrSearch( query, queryFields ) {
         facet            : 'on',
         fl               : 'title,subtitle,description,author,date,subject,identifier,coverHref,thumbHref',
         hl               : true,
-        'hl.fl'          : 'description,subject,title',
+        'hl.fl'          : getHlFlFromQueryFields( queryFields ),
+        'hl.fragsize'    : 500,
+        'hl.simple.pre'  : '<mark>',
+        'hl.simple.post' : '</mark>',
+        'hl.snippets'    : 1,
         qf               : getQfFromQueryFields( queryFields ),
         rows             : 1999,
         sort             : 'score%20desc,title_sort%20asc',
@@ -87,6 +91,20 @@ async function solrSearch( query, queryFields ) {
     } catch( e ) {
         throw e;
     }
+}
+
+function getHlFlFromQueryFields( queryFields ) {
+    let hlFlFields = [];
+
+    Object.keys( queryFields ).forEach( fieldName => {
+        const highlight = queryFields[ fieldName ].highlight || false;
+
+        if ( highlight ) {
+            hlFlFields.push( `${ fieldName }` );
+        }
+    } );
+
+    return hlFlFields.join( ',' );
 }
 
 function getQfFromQueryFields( queryFields ) {

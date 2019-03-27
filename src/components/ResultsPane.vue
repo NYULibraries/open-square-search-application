@@ -48,22 +48,31 @@
                                 <a
                                     :href="`/books/${ result.identifier }`"
                                 >
-                                    <div class="book-title">
-                                        {{ result.title }}
+                                    <div
+                                        class="book-title"
+                                        v-html="getFieldValueOrHighlightedFieldValue( result, 'title' )"
+                                    >
                                     </div>
-                                    <div class="book-subtitle">
-                                        {{ result.subtitle }}</div>
+                                    <div
+                                        class="book-subtitle"
+                                        v-html="getFieldValueOrHighlightedFieldValue( result, 'subtitle' )"
+                                    >
+                                    </div>
                                 </a>
                             </div>
 
-                            <div class="author">
-                                {{ result.author[ 0 ] }}
+                            <div
+                                class="author"
+                                v-html="getFieldValueOrHighlightedFieldValue( result, 'author' )"
+                            >
                             </div>
                             <div class="pubdate">
-                                <span>Published:</span> {{ result.date }}
+                                <span>Published:</span> <span v-html="getFieldValueOrHighlightedFieldValue( result, 'date' )"></span>
                             </div>
-                            <div class="meta">
-                                {{ result.description }}
+                            <div
+                                class="meta"
+                                v-html="getFieldValueOrHighlightedFieldValue( result, 'description' )"
+                            >
                             </div>
                         </div>
                     </article>
@@ -88,6 +97,13 @@ export default {
             type     : Boolean,
             required : true,
             default  : false,
+        },
+        highlights   : {
+            type     : Object,
+            required : true,
+            default  : function () {
+                return null;
+            },
         },
         numBooks : {
             type     : Number,
@@ -121,6 +137,27 @@ export default {
             } else {
                 return 'Results: None';
             }
+        },
+    },
+    methods : {
+        getFieldValueOrHighlightedFieldValue( result, field ) {
+            const identifier = result.identifier;
+
+            if ( this.highlights[ identifier ] && this.highlights[ identifier ][ field ] ) {
+                // We only want the first snippet
+                return this.highlights[ identifier ][ field ][ 0 ];
+            } else {
+                const fieldValue = result[ field ];
+
+                if ( Array.isArray( fieldValue ) ) {
+                    return fieldValue[ 0 ];
+                } else {
+                    return fieldValue;
+                }
+            }
+        },
+        test() {
+            return 'test';
         },
     },
 };
