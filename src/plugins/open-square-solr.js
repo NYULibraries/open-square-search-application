@@ -77,7 +77,7 @@ async function solrSearch( query, queryFields ) {
         fl               : 'title,subtitle,description,author,date,subject,identifier,coverHref,thumbHref',
         hl               : true,
         'hl.fl'          : 'description,subject,title',
-        qf               : queryFields.join( '%20' ),
+        qf               : getQfFromQueryFields( queryFields ),
         rows             : 1999,
         sort             : 'score%20desc,title_sort%20asc',
     };
@@ -87,6 +87,18 @@ async function solrSearch( query, queryFields ) {
     } catch( e ) {
         throw e;
     }
+}
+
+function getQfFromQueryFields( queryFields ) {
+    let weightedQueryFields = [];
+
+    Object.keys( queryFields ).forEach( fieldName => {
+        const weight = queryFields[ fieldName ].weight || 1;
+
+        weightedQueryFields.push( `${ fieldName }^${ weight }` );
+    } );
+
+    return weightedQueryFields.join( '%20' );
 }
 
 export default {

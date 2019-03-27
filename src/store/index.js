@@ -9,7 +9,7 @@ const store = new Vuex.Store( {
     state() {
         return {
             query                          : null,
-            queryFields                    : [],
+            queryFields                    : {},
             selectedSubjectsFacetItems : [],
         };
     },
