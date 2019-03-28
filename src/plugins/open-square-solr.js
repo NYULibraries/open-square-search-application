@@ -1,3 +1,5 @@
+const DEFAULT_HIGHLIGHT_FRAGMENT_SIZE = 500;
+
 const DEFAULT_SOLR_CORE_PATH = '/solr/open-square-metadata/';
 const DEFAULT_SOLR_HOST      = 'discovery1.dlib.nyu.edu';
 const DEFAULT_SOLR_PORT      = 80;
@@ -6,6 +8,7 @@ const DEFAULT_SOLR_PROTOCOL  = 'http';
 const ERROR_SIMULATION_SEARCH       = 'search';
 
 let errorSimulation;
+let highlightFragmentSize;
 let solrCorePath;
 let solrHost;
 let solrPort;
@@ -72,7 +75,7 @@ async function solrSearch( query, queryFields ) {
         fl               : 'title,subtitle,description,author,date,identifier,coverHref,thumbHref',
         hl               : true,
         'hl.fl'          : getHlFlFromQueryFields( queryFields ),
-        'hl.fragsize'    : 500,
+        'hl.fragsize'    : highlightFragmentSize,
         'hl.simple.pre'  : '<mark>',
         'hl.simple.post' : '</mark>',
         'hl.snippets'    : 1,
@@ -122,8 +125,11 @@ export default {
         solrPort     = options.solrPort     || DEFAULT_SOLR_PORT;
         solrProtocol = options.solrProtocol || DEFAULT_SOLR_PROTOCOL;
 
+        highlightFragmentSize = options.highlightFragmentSize || DEFAULT_HIGHLIGHT_FRAGMENT_SIZE;
+
         errorSimulation = options.errorSimulation;
 
+        Vue.prototype.$solrHighlightFragmentSize = highlightFragmentSize;
         Vue.prototype.$solrSearch = solrSearch;
     },
 };
