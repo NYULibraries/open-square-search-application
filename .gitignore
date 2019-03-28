@@ -23,6 +23,7 @@ yarn-error.log*
 # https://jira.nyu.edu/jira/browse/NYUP-594
 # For getting static site assets and cover thumbnails to load when developing
 # using webpack-dev-server
+public/books
 public/css
 public/fonts
 public/images
