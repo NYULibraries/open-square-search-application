@@ -67,7 +67,7 @@ export default {
                 display              : false,
                 error                : false,
                 highlights           : {},
-                maxDescriptionLength : null,
+                maxDescriptionLength : this.$solrHighlightFragmentSize,
                 numBooks             : 0,
                 numPages             : 0,
                 results              : [],
