@@ -156,7 +156,9 @@ export default {
 
             if ( this.highlights[ identifier ] && this.highlights[ identifier ].description ) {
                 // We only want the first snippet
-                return this.highlights[ identifier ].description[ 0 ];
+                return this.ellipsis +
+                       this.highlights[ identifier ].description[ 0 ] +
+                       this.ellipsis;
             } else {
                 return this.truncate( result.description, this.maxDescriptionLength );
             }
