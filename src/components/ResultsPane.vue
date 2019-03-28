@@ -71,7 +71,7 @@
                             </div>
                             <div
                                 class="meta"
-                                v-html="getFieldValueOrHighlightedFieldValue( result, 'description' )"
+                                v-html="getDescription( result )"
                             >
                             </div>
                         </div>
@@ -145,6 +145,16 @@ export default {
         },
     },
     methods : {
+        getDescription( result ) {
+            const identifier = result.identifier;
+
+            if ( this.highlights[ identifier ] && this.highlights[ identifier ].description ) {
+                // We only want the first snippet
+                return this.highlights[ identifier ].description[ 0 ];
+            } else {
+                return this.truncate( result.description, this.maxDescriptionLength );
+            }
+        },
         getFieldValueOrHighlightedFieldValue( result, field ) {
             const identifier = result.identifier;
 
@@ -160,6 +170,19 @@ export default {
                     return fieldValue;
                 }
             }
+        },
+        truncate( text, maxLength ) {
+            if ( ! text ) {
+                return text;
+            }
+
+            if ( text.length <= maxLength ) {
+                return text;
+            }
+
+            return text.substr( 0, text.lastIndexOf( ' ', maxLength ) ) +
+                   // Ellipsis character -- on Macos use key combination `Option + ;`
+                   '…';
         },
     },
 };
