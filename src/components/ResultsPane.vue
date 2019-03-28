@@ -105,6 +105,11 @@ export default {
                 return null;
             },
         },
+        maxDescriptionLength : {
+            type     : Number,
+            required : false,
+            default  : 500,
+        },
         numBooks : {
             type     : Number,
             required : true,

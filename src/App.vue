@@ -11,6 +11,7 @@
                     :display="resultsPane.display"
                     :error="resultsPane.error"
                     :highlights="resultsPane.highlights"
+                    :max-description-length="resultsPane.maxDescriptionLength"
                     :num-books="resultsPane.numBooks"
                     :results="resultsPane.results"
                 />
@@ -63,12 +64,13 @@ export default {
     data() {
         return {
             resultsPane : {
-                display    : false,
-                error      : false,
-                highlights : {},
-                numBooks   : 0,
-                numPages   : 0,
-                results    : [],
+                display              : false,
+                error                : false,
+                highlights           : {},
+                maxDescriptionLength : null,
+                numBooks             : 0,
+                numPages             : 0,
+                results              : [],
             },
             searchForm : {
                 queryUI : '',
