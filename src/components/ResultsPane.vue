@@ -93,6 +93,12 @@ export default {
             required : true,
             default  : false,
         },
+        // Ellipsis character -- on Macos use key combination `Option + ;`
+        ellipsis : {
+            type     : String,
+            required : false,
+            default  : '…',
+        },
         error    : {
             type     : Boolean,
             required : true,
@@ -180,9 +186,7 @@ export default {
                 return text;
             }
 
-            return text.substr( 0, text.lastIndexOf( ' ', maxLength ) ) +
-                   // Ellipsis character -- on Macos use key combination `Option + ;`
-                   '…';
+            return text.substr( 0, text.lastIndexOf( ' ', maxLength ) ) + this.ellipsis;
         },
     },
 };
