@@ -71,7 +71,7 @@
                             </div>
                             <div
                                 class="meta"
-                                v-html="getFieldValueOrHighlightedFieldValue( result, 'description' )"
+                                v-html="getDescription( result )"
                             >
                             </div>
                         </div>
@@ -93,6 +93,12 @@ export default {
             required : true,
             default  : false,
         },
+        // Ellipsis character -- on Macos use key combination `Option + ;`
+        ellipsis : {
+            type     : String,
+            required : false,
+            default  : '…',
+        },
         error    : {
             type     : Boolean,
             required : true,
@@ -104,6 +110,11 @@ export default {
             default  : function () {
                 return null;
             },
+        },
+        maxDescriptionLength : {
+            type     : Number,
+            required : false,
+            default  : 500,
         },
         numBooks : {
             type     : Number,
@@ -140,6 +151,18 @@ export default {
         },
     },
     methods : {
+        getDescription( result ) {
+            const identifier = result.identifier;
+
+            if ( this.highlights[ identifier ] && this.highlights[ identifier ].description ) {
+                // We only want the first snippet
+                return this.ellipsis +
+                       this.highlights[ identifier ].description[ 0 ] +
+                       this.ellipsis;
+            } else {
+                return this.truncate( result.description, this.maxDescriptionLength );
+            }
+        },
         getFieldValueOrHighlightedFieldValue( result, field ) {
             const identifier = result.identifier;
 
@@ -156,8 +179,16 @@ export default {
                 }
             }
         },
-        test() {
-            return 'test';
+        truncate( text, maxLength ) {
+            if ( ! text ) {
+                return text;
+            }
+
+            if ( text.length <= maxLength ) {
+                return text;
+            }
+
+            return text.substr( 0, text.lastIndexOf( ' ', maxLength ) ) + this.ellipsis;
         },
     },
 };

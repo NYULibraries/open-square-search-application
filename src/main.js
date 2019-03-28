@@ -10,10 +10,11 @@ require( './assets/sass/search-style.scss' );
 Vue.config.productionTip = false;
 
 const openSquareSolrOptions = {
-    solrCorePath : '/solr/open-square-metadata/',
-    solrHost     : process.env.VUE_APP_SOLR_HOST,
-    solrPort     : process.env.VUE_APP_SOLR_PORT,
-    solrProtocol : process.env.VUE_APP_SOLR_PROTOCOL,
+    highlightFragmentSize : 500,
+    solrCorePath          : '/solr/open-square-metadata/',
+    solrHost              : process.env.VUE_APP_SOLR_HOST,
+    solrPort              : process.env.VUE_APP_SOLR_PORT,
+    solrProtocol          : process.env.VUE_APP_SOLR_PROTOCOL,
 };
 
 const params = new URLSearchParams( window.location.search );
