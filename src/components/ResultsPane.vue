@@ -156,9 +156,6 @@ export default {
                 }
             }
         },
-        test() {
-            return 'test';
-        },
     },
 };
 </script>
