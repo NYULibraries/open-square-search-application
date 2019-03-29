@@ -21,7 +21,7 @@ suite( 'Search form', function () {
             const googleAnalytics = SearchPage.googleAnalytics;
             let expectedGoogleAnalytics = [];
 
-            if ( browser.options.enmGoogleAnalytics ) {
+            if ( browser.options.openSquareGoogleAnalytics ) {
                 expectedGoogleAnalytics = [
                     '<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>',
                     '<script async="" src="https://www.googletagmanager.com/gtag/js?id=' + GOOGLE_ANALYTICS_TRACKING_ID + '"></script>',
