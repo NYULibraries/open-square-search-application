@@ -33,6 +33,7 @@ exports.config = {
     specs : [
         'tests/browser/tests/errors.js',
         'tests/browser/tests/google-analytics.js',
+        'tests/browser/tests/navbar.js',
         'tests/browser/tests/search-form.js',
         'tests/browser/tests/search-results.js',
     ],
@@ -46,6 +47,9 @@ exports.config = {
         ],
         'google-analytics' : [
             'tests/browser/tests/google-analytics.js',
+        ],
+        'navbar' : [
+            'tests/browser/tests/navbar.js',
         ],
         'search-form' : [
             'tests/browser/tests/search-form.js',
