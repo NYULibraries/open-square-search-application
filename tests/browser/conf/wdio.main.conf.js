@@ -33,9 +33,6 @@ exports.config = {
     specs : [
         'tests/browser/tests/errors.js',
         'tests/browser/tests/google-analytics.js',
-        'tests/browser/tests/limit-by-topic-pane.js',
-        'tests/browser/tests/navbar.js',
-        'tests/browser/tests/search-echo.js',
         'tests/browser/tests/search-form.js',
         'tests/browser/tests/search-results.js',
     ],
@@ -49,15 +46,6 @@ exports.config = {
         ],
         'google-analytics' : [
             'tests/browser/tests/google-analytics.js',
-        ],
-        'limit-by-pane' : [
-            'tests/browser/tests/limit-by-pane.js',
-        ],
-        'navbar' : [
-            'tests/browser/tests/navbar.js',
-        ],
-        'search-echo' : [
-            'tests/browser/tests/search-echo.js',
         ],
         'search-form' : [
             'tests/browser/tests/search-form.js',
