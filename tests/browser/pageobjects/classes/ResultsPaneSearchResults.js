@@ -2,7 +2,7 @@
 
 class ResultsPaneSearchResults {
     get _element() {
-        return $( '.enm-results' );
+        return $( '.osq-results' );
     }
 
     book( title ) {
