@@ -25,6 +25,7 @@
                     :id="result.identifier"
                     :key="result.identifier"
                     :name="result.title"
+                    class="book-summary-hold"
                 >
                     <article class="book-summary">
                         <div
