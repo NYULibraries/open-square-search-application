@@ -16,20 +16,28 @@ class ResultsPaneSearchResults {
         results.forEach( ( result ) => {
             let book = {};
 
-            book.author          = result.element( '.author' ).getText();
-            book.description     = result.element( '.meta .meta' ).getText();
-            book.isbn            = result.getAttribute( 'id' );
-            // Get the 4-digit year, omit the label
-            book.publicationDate = result.element( '.pubdate' ).getText().slice( -4 );
-            book.subtitle        = result.element( '.book-subtitle' ).getText();
+            book.author          = innerHtml( result.element( '.author' ).getHTML() );
+            book.description     = innerHtml( result.element( '.meta .meta' ).getHTML() );
+            book.isbn            = innerHtml( result.getAttribute( 'id' ) );
+            book.publicationDate = innerHtml( result.element( '.pubdate' ).getHTML() )
+                .replace( /<span>/g, '' )
+                .replace( /<\/span>/g, '' )
+                .replace( /Published:/, '' )
+                ;
+            book.subtitle        = innerHtml( result.element( '.book-subtitle' ).getHTML() );
             book.thumbnail       = new URL( result.element( '.thumb img' ).getAttribute( 'src' ) ).pathname;
-            book.title           = result.element( '.book-title' ).getText();
+            book.title           = innerHtml( result.element( '.book-title' ).getHTML() );
 
             books.push( book );
         } );
 
         return books;
     };
+}
+
+function innerHtml( str ) {
+    let newStr = str.replace( /^<[^>]+>/, '' );
+    return newStr.replace( /<[^>]+>$/, '' );
 }
 
 export default ResultsPaneSearchResults;
