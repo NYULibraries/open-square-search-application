@@ -9,7 +9,7 @@ class ResultsPaneHeader {
         let found = this.text.match( /Results: (\d+) books/ );
 
         if ( found ) {
-            return parseInt( found[ 2 ].replace( ',', '' ), 10 );
+            return parseInt( found[ 1 ].replace( ',', '' ), 10 );
         } else {
             return NaN;
         }
