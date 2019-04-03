@@ -17,7 +17,7 @@ class ResultsPaneSearchResults {
             let book = {};
 
             book.author          = result.element( '.author' ).getText();
-            book.description     = result.element( '.meta' ).getText();
+            book.description     = result.element( '.meta .meta' ).getText();
             book.isbn            = result.getAttribute( 'id' );
             // Get the 4-digit year, omit the label
             book.publicationDate = result.element( '.pubdate' ).getText().slice( -4 );
