@@ -1,0 +1,64 @@
+{
+    "highlighting": {
+        "9780814730911": {
+            "description": [
+                "It is an article of <mark>faith</mark> in America that scientific advances will lead to wondrous progress in our daily lives. Americans proudly support scientific research that yields stunning breakthroughs and Nobel prizes. We relish the ensuing debate about the implications—moral, ethical, practical—of these advances. Will genetic engineering change our basic nature? Will artificial intelligence challenge our sense of human uniqueness? And yet the actual implementation of these technologies is often"
+            ]
+        },
+        "9780814755297": {
+            "title": [
+                "<mark>Faith</mark> Born of Seduction"
+            ]
+        }
+    },
+    "response": {
+        "docs": [
+            {
+                "author": [
+                    "Jennifer L Manlowe"
+                ],
+                "coverHref": "epub_content/9780814755297/ops/images/9780814755297.jpg",
+                "date": "1995",
+                "description": "How do survivors of sexual and domestic violence relate to religion and to a higher power? What are the social and religious contexts that sustain and encourage eating disorders in women? How do these issues intersect? The relationship between Christian religious discourse, incest, and eating disorders reveals an important, and so far unexamined, psychosocial phenomenon. Drawing from interviews with incest survivors whose sexual and religious backgrounds are intimately connected with their problematic relationship with food, Jennifer Manlowe here illuminates the connections between female body, weight, and appetite preoccupations.Manlowe offers social and psychological insights into the most common forms of female suffering—incest and body hatred. The volume is intended as a resource for professionals, advocates, friends of survivors, and most importantly, the survivor of incest herself as she attempts to understand the links of meaning in her mind between her incest experience and her subsequent eating disorder.",
+                "identifier": "9780814755297",
+                "subtitle": "Sexual Trauma, Body Image, and Religion",
+                "thumbHref": "epub_content/9780814755297/ops/images/9780814755297-th.jpg",
+                "title": "Faith Born of Seduction"
+            },
+            {
+                "author": [
+                    "Steven Goldberg"
+                ],
+                "coverHref": "epub_content/9780814730911/ops/images/9780814730911.jpg",
+                "date": "1994",
+                "description": "It is an article of faith in America that scientific advances will lead to wondrous progress in our daily lives. Americans proudly support scientific research that yields stunning breakthroughs and Nobel prizes. We relish the ensuing debate about the implications—moral, ethical, practical—of these advances. Will genetic engineering change our basic nature? Will artificial intelligence challenge our sense of human uniqueness? And yet the actual implementation of these technologies is often sluggish and much-delayed. From Star Trek to Jurassic Park, the American imagination has always been fascinated by the power of scientific technology. But what does the reality of scientific progress mean for our society?  In this controversial book, Steven Goldberg provides a compelling look at the intersection of two of America's most powerful communities—law and science—to explain this apparent contradiction. Rarely considered in tandem, law and science highlight a fundamental paradox in the American character, the struggle between progress and process. Science, with its ethic of endless progress, has long fit beautifully with America's self image. Law, in accordance with the American ideal of giving everyone a fair say, stresses process above all else, seeking an acceptable, rather than a scientifically correct, result. This characteristic has been especially influential in light of the explosive growth of the legal community in recent years. Exposing how the legal system both supports and restricts American science and technology, Goldberg considers the role and future of three projects—artificial intelligence, nuclear fusion, and the human genome initiative—to argue for a scientific vision that infuses research with social goals beyond the pure search for truth. Certain to provoke debate within a wide range of academic and professional communities, Culture Clash reveals one of the most important and defining conflicts in contemporary American life.",
+                "identifier": "9780814730911",
+                "subtitle": "Law and Science in America",
+                "thumbHref": "epub_content/9780814730911/ops/images/9780814730911-th.jpg",
+                "title": "Culture Clash"
+            }
+        ],
+        "numFound": 2,
+        "start": 0
+    },
+    "responseHeader": {
+        "QTime": 1,
+        "params": {
+            "defType": "edismax",
+            "fl": "title,subtitle,description,author,date,identifier,coverHref,thumbHref",
+            "hl": "true",
+            "hl.fl": "author,date,description,series_names,subtitle,title",
+            "hl.fragsize": "500",
+            "hl.simple.post": "</mark>",
+            "hl.simple.pre": "<mark>",
+            "hl.snippets": "1",
+            "indent": "on",
+            "q": "faith",
+            "qf": "author^4 date^1 description^2 series_names^3 subtitle^4 title^4",
+            "rows": "1999",
+            "sort": "score desc,title_sort asc",
+            "wt": "json"
+        },
+        "status": 0
+    }
+}

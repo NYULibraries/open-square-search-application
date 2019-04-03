@@ -1,0 +1,66 @@
+{
+    "highlighting": {
+        "9780814726815": {
+            "description": [
+                " victimization and white racism that often infuses work on Blacks and Jews, Forman emphasizes the complexities inherent in one distinct white ethnic group's involvement in America's racial <mark>dilemma</mark>."
+            ]
+        },
+        "9780814779163": {
+            "description": [
+                "In The <mark>Dilemma</mark> of Context, Scharfstein contends that the problems encountered with context are insoluble. He explains why this problem lays an intellectual burden on us that, while remaining inescapable,can become so heavy it destroys the understandingit was created to further."
+            ],
+            "title": [
+                "The <mark>Dilemma</mark> of Context"
+            ]
+        }
+    },
+    "response": {
+        "docs": [
+            {
+                "author": [
+                    "Ben-Ami Scharfstein"
+                ],
+                "coverHref": "epub_content/9780814779163/ops/images/9780814779163.jpg",
+                "date": "1989",
+                "description": "In The Dilemma of Context, Scharfstein contends that the problems encountered with context are insoluble. He explains why this problem lays an intellectual burden on us that, while remaining inescapable,can become so heavy it destroys the understandingit was created to further.",
+                "identifier": "9780814779163",
+                "thumbHref": "epub_content/9780814779163/ops/images/9780814779163-th.jpg",
+                "title": "The Dilemma of Context"
+            },
+            {
+                "author": [
+                    "Seth Forman"
+                ],
+                "coverHref": "epub_content/9780814726815/ops/images/9780814726815.jpg",
+                "date": "1998",
+                "description": "Since the 1960s the relationship between Blacks and Jews has been a contentious one. While others have attempted to explain or repair the break-up of the Jewish alliance on civil rights, Seth Forman here sets out to determine what Jewish thinking on the subject of Black Americans reveals about Jewish identity in the U.S. Why did American Jews get involved in Black causes in the first place? What did they have to gain from it? And what does that tell us about American Jews? In an extremely provocative analysis, Forman argues that the commitment of American Jews to liberalism, and their historic definition of themselves as victims, has caused them to behave in ways that were defined as good for Blacks, but which in essence were contrary to Jewish interests. They have not been able to dissociate their needs--religious, spiritual, communal, political--from those of African Americans, and have therefore acted in ways which have threatened their own cultural vitality. Avoiding the focus on Black victimization and white racism that often infuses work on Blacks and Jews, Forman emphasizes the complexities inherent in one distinct white ethnic group's involvement in America's racial dilemma.",
+                "identifier": "9780814726815",
+                "subtitle": "A Crisis of Liberalism",
+                "thumbHref": "epub_content/9780814726815/ops/images/9780814726815-th.jpg",
+                "title": "Blacks in the Jewish Mind"
+            }
+        ],
+        "numFound": 2,
+        "start": 0
+    },
+    "responseHeader": {
+        "QTime": 1,
+        "params": {
+            "defType": "edismax",
+            "fl": "title,subtitle,description,author,date,identifier,coverHref,thumbHref",
+            "hl": "true",
+            "hl.fl": "author,date,description,series_names,subtitle,title",
+            "hl.fragsize": "500",
+            "hl.simple.post": "</mark>",
+            "hl.simple.pre": "<mark>",
+            "hl.snippets": "1",
+            "indent": "on",
+            "q": "dilemma",
+            "qf": "author^4 date^1 description^2 series_names^3 subtitle^4 title^4",
+            "rows": "1999",
+            "sort": "score desc,title_sort asc",
+            "wt": "json"
+        },
+        "status": 0
+    }
+}

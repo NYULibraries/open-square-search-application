@@ -1,0 +1,98 @@
+{
+    "highlighting": {
+        "9780814711774": {
+            "title": [
+                "Adventures of the <mark>Mind</mark>"
+            ]
+        },
+        "9780814715635": {
+            "description": [
+                "Since the fall of communism, laissez-faire capitalism has experienced renewed popularity. Flush with victory, the United States has embraced a particularly narrow and single-<mark>minded</mark> definition of capitalism and aggressively exported it worldwide. The defining trait of this brand of capitalism is an unwavering reverence for the icons of the market. Although promoted as a laissez-faire form of capitalism, it actually reflects the very evils of selfishness and greed by entrepreneurs that concerned"
+            ]
+        },
+        "9780814726815": {
+            "title": [
+                "Blacks in the Jewish <mark>Mind</mark>"
+            ]
+        },
+        "9780814755297": {
+            "description": [
+                " with their problematic relationship with food, Jennifer Manlowe here illuminates the connections between female body, weight, and appetite preoccupations.Manlowe offers social and psychological insights into the most common forms of female suffering—incest and body hatred. The volume is intended as a resource for professionals, advocates, friends of survivors, and most importantly, the survivor of incest herself as she attempts to understand the links of meaning in her <mark>mind</mark> between her incest experience and her"
+            ]
+        }
+    },
+    "response": {
+        "docs": [
+            {
+                "author": [
+                    "Natalie Clifford Barney, John Spalding Gatton"
+                ],
+                "coverHref": "epub_content/9780814711774/ops/images/9780814711774.jpg",
+                "date": "1992",
+                "description": "In this book, Barney explores her family tree, chronicles her friendships and associations through reprinted correspondence and recreated conversations, and evokes the golden age of her salon in gallery of literary portraits.",
+                "identifier": "9780814711774",
+                "subtitle": "The Memoirs of Natalie Clifford Barney",
+                "thumbHref": "epub_content/9780814711774/ops/images/9780814711774-th.jpg",
+                "title": "Adventures of the Mind"
+            },
+            {
+                "author": [
+                    "Seth Forman"
+                ],
+                "coverHref": "epub_content/9780814726815/ops/images/9780814726815.jpg",
+                "date": "1998",
+                "description": "Since the 1960s the relationship between Blacks and Jews has been a contentious one. While others have attempted to explain or repair the break-up of the Jewish alliance on civil rights, Seth Forman here sets out to determine what Jewish thinking on the subject of Black Americans reveals about Jewish identity in the U.S. Why did American Jews get involved in Black causes in the first place? What did they have to gain from it? And what does that tell us about American Jews? In an extremely provocative analysis, Forman argues that the commitment of American Jews to liberalism, and their historic definition of themselves as victims, has caused them to behave in ways that were defined as good for Blacks, but which in essence were contrary to Jewish interests. They have not been able to dissociate their needs--religious, spiritual, communal, political--from those of African Americans, and have therefore acted in ways which have threatened their own cultural vitality. Avoiding the focus on Black victimization and white racism that often infuses work on Blacks and Jews, Forman emphasizes the complexities inherent in one distinct white ethnic group's involvement in America's racial dilemma.",
+                "identifier": "9780814726815",
+                "subtitle": "A Crisis of Liberalism",
+                "thumbHref": "epub_content/9780814726815/ops/images/9780814726815-th.jpg",
+                "title": "Blacks in the Jewish Mind"
+            },
+            {
+                "author": [
+                    "Ruth Colker"
+                ],
+                "coverHref": "epub_content/9780814715635/ops/images/9780814715635.jpg",
+                "date": "1998",
+                "description": "Since the fall of communism, laissez-faire capitalism has experienced renewed popularity. Flush with victory, the United States has embraced a particularly narrow and single-minded definition of capitalism and aggressively exported it worldwide. The defining trait of this brand of capitalism is an unwavering reverence for the icons of the market. Although promoted as a laissez-faire form of capitalism, it actually reflects the very evils of selfishness and greed by entrepreneurs that concerned Adam Smith. Capitalism, however, can thrive without an extreme emphasis on efficiency and personal autonomy. Americans often forget that theirs is a rather peculiar form of capitalism, that other Western nations successfully maintain capitalistic systems that are fundamentally more balanced and nuanced in their effect on society. The unnecessarily inhumane aspects of American capitalism become apparent when compared to Canadian and Western European societies, with their more generous policies regarding affirmative action, accommodation for disabled persons, and family and medical leave for pregnant woman and their partners. In American Law in the Age of Hypercapitalism, Ruth Colker examines how American law purports to reflect--and actively promotes--a laissez-faire capitalism that disproportionately benefits the entrepreneurial class. Colker proposes that the quality of American life depends also on fairness and equality rather than simply the single-minded and formulaic pursuit of efficiency and utility.",
+                "identifier": "9780814715635",
+                "subtitle": "The Worker, the Family, and the State",
+                "thumbHref": "epub_content/9780814715635/ops/images/9780814715635-th.jpg",
+                "title": "American Law in the Age of Hypercapitalism"
+            },
+            {
+                "author": [
+                    "Jennifer L Manlowe"
+                ],
+                "coverHref": "epub_content/9780814755297/ops/images/9780814755297.jpg",
+                "date": "1995",
+                "description": "How do survivors of sexual and domestic violence relate to religion and to a higher power? What are the social and religious contexts that sustain and encourage eating disorders in women? How do these issues intersect? The relationship between Christian religious discourse, incest, and eating disorders reveals an important, and so far unexamined, psychosocial phenomenon. Drawing from interviews with incest survivors whose sexual and religious backgrounds are intimately connected with their problematic relationship with food, Jennifer Manlowe here illuminates the connections between female body, weight, and appetite preoccupations.Manlowe offers social and psychological insights into the most common forms of female suffering—incest and body hatred. The volume is intended as a resource for professionals, advocates, friends of survivors, and most importantly, the survivor of incest herself as she attempts to understand the links of meaning in her mind between her incest experience and her subsequent eating disorder.",
+                "identifier": "9780814755297",
+                "subtitle": "Sexual Trauma, Body Image, and Religion",
+                "thumbHref": "epub_content/9780814755297/ops/images/9780814755297-th.jpg",
+                "title": "Faith Born of Seduction"
+            }
+        ],
+        "numFound": 4,
+        "start": 0
+    },
+    "responseHeader": {
+        "QTime": 2,
+        "params": {
+            "defType": "edismax",
+            "fl": "title,subtitle,description,author,date,identifier,coverHref,thumbHref",
+            "hl": "true",
+            "hl.fl": "author,date,description,series_names,subtitle,title",
+            "hl.fragsize": "500",
+            "hl.simple.post": "</mark>",
+            "hl.simple.pre": "<mark>",
+            "hl.snippets": "1",
+            "indent": "on",
+            "q": "mind",
+            "qf": "author^4 date^1 description^2 series_names^3 subtitle^4 title^4",
+            "rows": "1999",
+            "sort": "score desc,title_sort asc",
+            "wt": "json"
+        },
+        "status": 0
+    }
+}

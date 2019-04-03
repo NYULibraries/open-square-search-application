@@ -1,0 +1,47 @@
+{
+    "highlighting": {
+        "9780814780978": {
+            "author": [
+                "Ian <mark>Shapiro</mark>, Robert Adams"
+            ]
+        }
+    },
+    "response": {
+        "docs": [
+            {
+                "author": [
+                    "Ian Shapiro, Robert Adams"
+                ],
+                "coverHref": "epub_content/9780814780978/ops/images/9780814780978.jpg",
+                "date": "1998",
+                "description": "Can individuals believe that they are acting with integrity, yet in disobedience to the dictates of their conscience? Can they retain fidelity to their conscience while ignoring a sense of what integrity requires? Integrity and conscience are often thought to be closely related, perhaps even different aspects of a single impulse. This timely book supports a different and more complicated view. Acting with integrity and obeying one's conscience might be mutually reinforcing in some settings, but in others they can live in varying degrees of mutual tension. Bringing together prominent scholars of legal theory and political philosophy, the volume addresses both classic ruminations on integrity and conscience by Plato, Hume, and Kant as well as more contemporary examinations of professional ethics and the complex relations among politics, law and personal morality.",
+                "identifier": "9780814780978",
+                "subtitle": "Nomos XL",
+                "thumbHref": "epub_content/9780814780978/ops/images/9780814780978-th.jpg",
+                "title": "Integrity and Conscience"
+            }
+        ],
+        "numFound": 1,
+        "start": 0
+    },
+    "responseHeader": {
+        "QTime": 0,
+        "params": {
+            "defType": "edismax",
+            "fl": "title,subtitle,description,author,date,identifier,coverHref,thumbHref",
+            "hl": "true",
+            "hl.fl": "author,date,description,series_names,subtitle,title",
+            "hl.fragsize": "500",
+            "hl.simple.post": "</mark>",
+            "hl.simple.pre": "<mark>",
+            "hl.snippets": "1",
+            "indent": "on",
+            "q": "shapiro",
+            "qf": "author^4 date^1 description^2 series_names^3 subtitle^4 title^4",
+            "rows": "1999",
+            "sort": "score desc,title_sort asc",
+            "wt": "json"
+        },
+        "status": 0
+    }
+}
