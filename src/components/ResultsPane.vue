@@ -68,7 +68,7 @@
                             >
                             </div>
                             <div class="pubdate">
-                                <span>Published:</span> <span v-html="getFieldValueOrHighlightedFieldValue( result, 'date' )"></span>
+                                <span>Published: </span><span v-html="getFieldValueOrHighlightedFieldValue( result, 'date' )"></span>
                             </div>
                             <div
                                 class="meta"
