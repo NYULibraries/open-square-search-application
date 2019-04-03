@@ -22,7 +22,7 @@ class ResultsPaneSearchResults {
             book.publicationDate = result.element( '.pubdate' ).getText();
             book.subtitle        = result.element( '.book-subtitle' ).getText();
             book.thumbnail       = new URL( result.element( '.thumb img' ).getAttribute( 'src' ) ).pathname;
-            book.title           = result.element( '.title' ).getText();
+            book.title           = result.element( '.book-title' ).getText();
 
             books.push( book );
         } );
