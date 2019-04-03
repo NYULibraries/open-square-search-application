@@ -3167,9 +3167,9 @@ dir-glob@^2.0.0, dir-glob@^2.2.1:
   dependencies:
     path-type "^3.0.0"
 
-"dlts-solr-fake@https://github.com/nyulibraries/dlts-solr-fake#v0.0.3":
-  version "0.0.3"
-  resolved "https://github.com/nyulibraries/dlts-solr-fake#7735f56c281ab60d2eb244bd92723477e5aa536a"
+"dlts-solr-fake@https://github.com/nyulibraries/dlts-solr-fake#v0.1.0":
+  version "0.1.0"
+  resolved "https://github.com/nyulibraries/dlts-solr-fake#07e14354fed097d2a593431b22bdb17b065399fb"
   dependencies:
     axios "^0.18.0"
     json-server "^0.14.2"
