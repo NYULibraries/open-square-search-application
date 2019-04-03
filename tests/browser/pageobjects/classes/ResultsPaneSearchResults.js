@@ -19,7 +19,8 @@ class ResultsPaneSearchResults {
             book.author          = result.element( '.author' ).getText();
             book.description     = result.element( '.meta' ).getText();
             book.isbn            = result.getAttribute( 'id' );
-            book.publicationDate = result.element( '.pubdate' ).getText();
+            // Get the 4-digit year, omit the label
+            book.publicationDate = result.element( '.pubdate' ).getText().slice( -4 );
             book.subtitle        = result.element( '.book-subtitle' ).getText();
             book.thumbnail       = new URL( result.element( '.thumb img' ).getAttribute( 'src' ) ).pathname;
             book.title           = result.element( '.book-title' ).getText();
