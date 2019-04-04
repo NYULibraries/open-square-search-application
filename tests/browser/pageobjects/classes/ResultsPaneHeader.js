@@ -11,7 +11,7 @@ class ResultsPaneHeader {
         if ( found ) {
             return parseInt( found[ 1 ].replace( ',', '' ), 10 );
         } else {
-            return NaN;
+            return 0;
         }
     }
 }
