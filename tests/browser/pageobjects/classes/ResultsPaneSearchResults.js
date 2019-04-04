@@ -22,8 +22,7 @@ class ResultsPaneSearchResults {
             book.publicationDate = innerHtml( result.element( '.pubdate' ).getHTML() )
                 .replace( /<span>/g, '' )
                 .replace( /<\/span>/g, '' )
-                .replace( /Published: /, '' )
-                ;
+                .replace( /Published: /, '' );
             book.subtitle        = innerHtml( result.element( '.book-subtitle' ).getHTML() );
             book.thumbnail       = new URL( result.element( '.thumb img' ).getAttribute( 'src' ) ).pathname;
             book.title           = innerHtml( result.element( '.book-title' ).getHTML() );
