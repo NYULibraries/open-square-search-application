@@ -33,7 +33,6 @@ class SearchPage extends Page {
 
     get paths() {
         return {
-            aboutOpenAccess : 'aboutopenaccess',
             aboutOpenSquare : 'aboutopensquare',
             books           : 'books',
             home            : '',
