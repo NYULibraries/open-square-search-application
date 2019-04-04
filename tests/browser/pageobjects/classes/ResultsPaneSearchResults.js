@@ -17,7 +17,7 @@ class ResultsPaneSearchResults {
             let book = {};
 
             book.author          = innerHtml( result.element( '.author' ).getHTML() );
-            book.description     = innerHtml( result.element( '.meta .meta' ).getHTML() );
+            book.description     = innerHtml( result.element( '.description' ).getHTML() );
             book.isbn            = innerHtml( result.getAttribute( 'id' ) );
             book.publicationDate = innerHtml( result.element( '.pubdate' ).getHTML() )
                 .replace( /<span>/g, '' )
