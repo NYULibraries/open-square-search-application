@@ -9,7 +9,7 @@ import {
 
 import SearchPage from '../pageobjects/search.page';
 
-const GOOGLE_ANALYTICS_TRACKING_ID = 'TODO';
+const GOOGLE_ANALYTICS_TRACKING_ID = 'UA-51495518-1';
 
 suite( 'Search form', function () {
     setup( function () {
@@ -28,7 +28,7 @@ suite( 'Search form', function () {
                     '<script>window.dataLayer = window.dataLayer || [];\n        ' +
                     'function gtag(){dataLayer.push(arguments);}\n        ' +
                     "gtag('js', new Date());\n\n        " +
-                    "gtag('config', GOOGLE_ANALYTICS_TRACKING_ID, { 'anonymize_ip': true });</script>",
+                    "gtag('config', '" + GOOGLE_ANALYTICS_TRACKING_ID + "', { 'anonymize_ip': true });</script>",
                 ];
             }
 
