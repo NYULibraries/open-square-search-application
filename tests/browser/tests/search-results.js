@@ -48,8 +48,8 @@ suite( 'Search results', function () {
 function testSearchResults( golden ) {
     const query          = golden.query;
 
-    const testTitle = `Search for '${ query }' produces correct `              +
-                      ' search results header and EPUBs list with thumbnails ' +
+    const testTitle = `Search for '${ query }' produces correct`              +
+                      ' search results header and EPUBs list with thumbnails' +
                       ' and metadata';
 
     test( testTitle, function () {
