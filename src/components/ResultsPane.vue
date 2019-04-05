@@ -71,7 +71,7 @@
                                 <span>Published: </span><span v-html="getFieldValueOrHighlightedFieldValue( result, 'date' )"></span>
                             </div>
                             <div
-                                class="meta"
+                                class="description meta"
                                 v-html="getDescription( result )"
                             >
                             </div>

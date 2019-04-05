@@ -34,15 +34,6 @@ public/open-square-reader
 
 /tests/browser/tests/testdata/actual/*
 
-!/tests/browser/tests/testdata/actual/search-echo/
-/tests/browser/tests/testdata/actual/search-echo/*
-!/tests/browser/tests/testdata/actual/search-echo/chrome/
-!/tests/browser/tests/testdata/actual/search-echo/firefox/
-/tests/browser/tests/testdata/actual/search-echo/chrome/*
-/tests/browser/tests/testdata/actual/search-echo/firefox/*
-!/tests/browser/tests/testdata/actual/search-echo/chrome/.commit-empty-directory
-!/tests/browser/tests/testdata/actual/search-echo/firefox/.commit-empty-directory
-
 !/tests/browser/tests/testdata/actual/search-results/
 /tests/browser/tests/testdata/actual/search-results/*
 !/tests/browser/tests/testdata/actual/search-results/chrome/
@@ -53,15 +44,6 @@ public/open-square-reader
 !/tests/browser/tests/testdata/actual/search-results/firefox/.commit-empty-directory
 
 /tests/browser/tests/testdata/diffs/*
-
-!/tests/browser/tests/testdata/diffs/search-echo/
-/tests/browser/tests/testdata/diffs/search-echo/*
-!/tests/browser/tests/testdata/diffs/search-echo/chrome/
-!/tests/browser/tests/testdata/diffs/search-echo/firefox/
-/tests/browser/tests/testdata/diffs/search-echo/chrome/*
-/tests/browser/tests/testdata/diffs/search-echo/firefox/*
-!/tests/browser/tests/testdata/diffs/search-echo/chrome/.commit-empty-directory
-!/tests/browser/tests/testdata/diffs/search-echo/firefox/.commit-empty-directory
 
 !/tests/browser/tests/testdata/diffs/search-results/
 /tests/browser/tests/testdata/diffs/search-results/*

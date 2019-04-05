@@ -1,0 +1,30 @@
+{
+    "highlighting": {
+    },
+    "response": {
+        "docs": [
+        ],
+        "numFound": 0,
+        "start": 0
+    },
+    "responseHeader": {
+        "QTime": 0,
+        "params": {
+            "defType": "edismax",
+            "fl": "title,subtitle,description,author,date,identifier,coverHref,thumbHref",
+            "hl": "true",
+            "hl.fl": "author,date,description,series_names,subtitle,title",
+            "hl.fragsize": "500",
+            "hl.simple.post": "</mark>",
+            "hl.simple.pre": "<mark>",
+            "hl.snippets": "1",
+            "indent": "on",
+            "q": "the",
+            "qf": "author^4 date^1 description^2 series_names^3 subtitle^4 title^4",
+            "rows": "1999",
+            "sort": "score desc,title_sort asc",
+            "wt": "json"
+        },
+        "status": 0
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "highlighting": {
+        "9780814715352": {
+            "description": [
+                " almost instantaneously, do not allow even the most uninterested viewer to ignore the grim reality of genocide. And yet, while information abounds, so do rationalizations for non-intervention in Balkan affairs - the threshold of real genocide has yet to be reached in Bosnia; all sides are equally guilty; Islamic fundamentalism in Bosnia is a threat to the West; it will only end when they all tire of killing each other - to name but a few. In This Time We Knew, Thomas Cushman and Stjepan <mark>G</mark>. Mestrovic"
+            ]
+        },
+        "9780814793114": {
+            "author": [
+                "Mark <mark>G</mark>. Winiarski"
+            ]
+        },
+        "9780814793398": {
+            "description": [
+                ", and falls into depression as his younger sister is dying of cancer. We meet Eva, an intelligent and confident young women full of questions, who grows increasingly alienated from her mother and comes to rely on her best friends for support. We watch her blossom as a ball player and a poet. We share her triumph when she receives a scholarship to the college of her choice. In these <mark>24</mark> adolescents, Way finds a cross-section of youngsters who want to make positive changes in their lives and communities"
+            ]
+        }
+    },
+    "response": {
+        "docs": [
+            {
+                "author": [
+                    "Mark G. Winiarski"
+                ],
+                "coverHref": "epub_content/9780814793114/ops/images/9780814793114.jpg",
+                "date": "1997",
+                "description": "As we approach the 21st century, we also approach the third decade of the AIDS epidemic. Mental health care providers must face the crucial fact that the human immunodeficiency virus (HIV) and the condition it causes, Acquired Immune Deficiency Syndrome (AIDS) is the leading cause of death among Americans aged 25-44 years. HIV Mental Health for the 21st Century provides a roadmap for mental health professionals who seek to develop new strategies aimed at increasing the longevity and quality of life for people living with HIV/AIDS, as well as at controlling the future spread of the disease. Divided into five sections, this volume covers basic concepts in HIV/AIDS mental health; specialized aspects of HIV/AIDS clinical care; models of clinical care; program evaluation; and HIV mental health policy and programs. Chapters treat issues such as feelings of caregivers, the role of spirituality in mental health care, rural practice, mental health home care, and working with children. ",
+                "identifier": "9780814793114",
+                "thumbHref": "epub_content/9780814793114/ops/images/9780814793114-th.jpg",
+                "title": "HIV Mental Health for the 21st Century"
+            },
+            {
+                "author": [
+                    "Niobe Way"
+                ],
+                "coverHref": "epub_content/9780814793398/ops/images/9780814793398.jpg",
+                "date": "1997",
+                "description": "What does it mean to be a teenager in an American city at the close of the twentieth century? How do urban surroundings affect the ways in which teens grow up, and what do their stories tell us about human development? In particular, how do the negative images of themselves on television and in the newspaper affect their perspectives about themselves? Psychologists typically have shown little interest in urban youth, preferring instead to generalize about adolescent development from studies of their middle-class, suburban counterparts. In Everyday Courage Niobe Way, a developmental psychologist, looks beyond the stereotypes to reveal how the personal worldviews of inner-city poor and working-class adolescents develop over time. In the process, she challenges much conventional wisdom about inner-city youth and about adolescents more generally. She introduces us to Malcolm, a sensitive and proud young man full of contradictions. We follow him as he makes the honor roll, becomes a teenage father, and falls into depression as his younger sister is dying of cancer. We meet Eva, an intelligent and confident young women full of questions, who grows increasingly alienated from her mother and comes to rely on her best friends for support. We watch her blossom as a ball player and a poet. We share her triumph when she receives a scholarship to the college of her choice. In these 24 adolescents, Way finds a cross-section of youngsters who want to make positive changes in their lives and communities while struggling with concerns about betrayal, trust, racism, violence, and death. Each adolescent wants most of all to “be somebody,” to have her or his voice heard.",
+                "identifier": "9780814793398",
+                "subtitle": "The Lives and Stories of Urban Teenagers",
+                "thumbHref": "epub_content/9780814793398/ops/images/9780814793398-th.jpg",
+                "title": "Everyday Courage"
+            },
+            {
+                "author": [
+                    "Thomas Cushman, Stjepan Mestrovic"
+                ],
+                "coverHref": "epub_content/9780814715352/ops/images/9780814715352.jpg",
+                "date": "1996",
+                "description": "We didn't know. For half a century, Western politicians and intellectuals have so explained away their inaction in the face of genocide in World War II. In stark contrast, Western observers today face a daily barrage of information and images, from CNN, the Internet, and newspapers about the parties and individuals responsible for the current Balkan War and crimes against humanity. The stories, often accompanied by video or pictures of rape, torture, mass graves, and ethnic cleansing, available almost instantaneously, do not allow even the most uninterested viewer to ignore the grim reality of genocide. And yet, while information abounds, so do rationalizations for non-intervention in Balkan affairs - the threshold of real genocide has yet to be reached in Bosnia; all sides are equally guilty; Islamic fundamentalism in Bosnia is a threat to the West; it will only end when they all tire of killing each other - to name but a few. In This Time We Knew, Thomas Cushman and Stjepan G. Mestrovic have put together a collection of critical, reflective, essays that offer detailed sociological, political, and historical analyses of western responses to the war. This volume punctures once and for all common excuses for Western inaction. This Time We Knew further reveals the reasons why these rationalizations have persisted and led to the West's failure to intercede, in the face of incontrovertible evidence, in the most egregious crimes against humanity to occur in Europe since World War II.Contributors to the volume include Kai Erickson, Jean Baudrillard, Mark Almond, David Riesman, Daniel Kofman, Brendan Simms, Daniele Conversi, Brad Kagan Blitz, James J. Sadkovich, and Sheri Fink.",
+                "identifier": "9780814715352",
+                "subtitle": "Western Responses to Genocide in Bosnia",
+                "thumbHref": "epub_content/9780814715352/ops/images/9780814715352-th.jpg",
+                "title": "This Time We Knew"
+            }
+        ],
+        "numFound": 3,
+        "start": 0
+    },
+    "responseHeader": {
+        "QTime": 3,
+        "params": {
+            "defType": "edismax",
+            "fl": "title,subtitle,description,author,date,identifier,coverHref,thumbHref",
+            "hl": "true",
+            "hl.fl": "author,date,description,series_names,subtitle,title",
+            "hl.fragsize": "500",
+            "hl.simple.post": "</mark>",
+            "hl.simple.pre": "<mark>",
+            "hl.snippets": "1",
+            "indent": "on",
+            "q": "asdfjklaj#$Q#$^%%24&^g fasdlfkn~#%%24Qe46787",
+            "qf": "author^4 date^1 description^2 series_names^3 subtitle^4 title^4",
+            "rows": "1999",
+            "sort": "score desc,title_sort asc",
+            "wt": "json"
+        },
+        "status": 0
+    }
+}

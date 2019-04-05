@@ -10,7 +10,11 @@ suite( 'Search form', function () {
     } );
 
     test( 'Spinner should appear when search is submitted', function () {
-        SearchPage.search( '*' );
+        // There don't seem to be any searches that are sufficiently slow to allow
+        // the spinner to be displayed long enough for the SearchPage.spinner.isVisible()
+        // to ever be true.  We intentionally do a search for which the Solr fake
+        // has no stored result to send back.
+        SearchPage.search( '[NO SOLR FAKE RESULTS FOR THIS SEARCH]' );
 
         assert( SearchPage.spinner.isVisible(), 'Spinner did not appear' );
     } );

@@ -33,11 +33,10 @@ class SearchPage extends Page {
 
     get paths() {
         return {
-            aboutOpenAccess : 'aboutopenaccess',
-            aboutOpenSquare : 'aboutopensquare',
-            books           : 'books',
+            aboutOpenSquare : 'aboutopensquare/',
+            books           : 'books/',
             home            : '',
-            search          : 'search',
+            search          : 'search/',
         };
     }
 
@@ -91,7 +90,6 @@ class SearchPage extends Page {
             query           : this.searchForm.searchBox.getValue(),
 
             resultsNumBooks : this.resultsPane.header.numBooks,
-            resultsNumPages : this.resultsPane.header.numPages,
             resultsMetadata : this.resultsPane.results.metadata(),
         };
     }
