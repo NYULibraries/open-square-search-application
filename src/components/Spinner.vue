@@ -86,7 +86,8 @@ export default {
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        border: 1px solid rgb(146,42,232);
+        /* Official NYU purple #57068c */
+        border: 1px solid rgb(87,6,140);
         position: absolute;
         top: 2px;
         left: 0;
