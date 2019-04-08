@@ -4,6 +4,7 @@ import crypto from 'crypto';
 
 import Page from './page';
 
+import Footer from './classes/Footer';
 import Navbar from './classes/Navbar';
 import ResultsPane from './classes/ResultsPane';
 import SearchForm from './classes/SearchForm';
@@ -12,6 +13,7 @@ class SearchPage extends Page {
     constructor() {
         super();
 
+        this.footer           = new Footer();
         this.navbar           = new Navbar();
         this.resultsPane      = new ResultsPane();
         this.searchForm       = new SearchForm();
@@ -34,6 +36,7 @@ class SearchPage extends Page {
     get paths() {
         return {
             aboutOpenSquare : 'aboutopensquare/',
+            accessibility   : 'https://www.nyu.edu/footer/accessibility.html',
             books           : 'books/',
             home            : '',
             search          : 'search/',
