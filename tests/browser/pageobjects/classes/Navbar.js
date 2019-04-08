@@ -1,10 +1,6 @@
 /* global $:false */
 
 class Navbar {
-    get aboutOpenAccess() {
-        return $( 'a=About Open Access' );
-    }
-
     get aboutOpenSquare() {
         return $( 'a=About Open Square' );
     }
