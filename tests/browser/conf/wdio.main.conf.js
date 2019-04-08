@@ -232,7 +232,11 @@ exports.config = {
      */
     onPrepare : function ( config, capabilities ) {
         if ( this.solrFake ) {
-            solrFake.startSolrFake( SOLR_FAKE_RESPONSES_DIRECTORY );
+            solrFake.startSolrFake(
+                {
+                    solrResponsesDirectory : SOLR_FAKE_RESPONSES_DIRECTORY,
+                }
+            );
         }
     },
     /**
