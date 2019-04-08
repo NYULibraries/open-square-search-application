@@ -2,11 +2,11 @@
 
 class Navbar {
     get aboutOpenSquare() {
-        return $( 'a=About Open Square' );
+        return $( '.nav-links' ).$( 'a=About Open Square' );
     }
 
     get browse() {
-        return $( 'a=Browse Books' );
+        return $( '.nav-links' ).$( 'a=Browse Books' );
     }
 
     get home() {
@@ -14,7 +14,7 @@ class Navbar {
     }
 
     get search() {
-        return $( 'a=Search' );
+        return $( '.nav-links' ).$( 'a=Search' );
     }
 }
 
