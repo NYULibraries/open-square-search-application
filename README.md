@@ -102,7 +102,7 @@ NPM module:
 The Solr fake is configured and started automatically in `tests/browser/conf/wdio.main.conf.js`:
 
 ```javascript
-    // DLTS Solr Fake
+// DLTS Solr Fake
     solrFake : {
         url : 'http://localhost:3000/',
     },
@@ -121,42 +121,41 @@ The Solr fake is configured and started automatically in `tests/browser/conf/wdi
      */
     onPrepare : function ( config, capabilities ) {
         if ( this.solrFake ) {
-            solrFake.startSolrFake( SOLR_FAKE_RESPONSES_INDEX, SOLR_FAKE_RESPONSES_DIRECTORY );
+            const options = {
+                solrResponsesDirectory : SOLR_FAKE_RESPONSES_DIRECTORY,
+            };
+
+            // UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL environment variable if used
+            // should be of the form:
+            // http://[HOST]:[PORT]/solr/open-square-metadata/select
+            if ( process.env.UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL ) {
+                options.updateSolrResponsesSolrServerUrl = process.env.UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL;
+            }
+
+            solrFake.startSolrFake( options );
         }
     },
 ```
 
-The Solr responses served by the Solr fake are in `tests/browser/fixtures/`.
+The Solr responses served by the Solr fake are in `tests/browser/fixtures/solr-fake/`.
 The `index.json` file maps Solr request query strings to response files.
 
 #### Update Solr fixture data
 
-To update the files in `tests/browser/fixtures/`, follow these steps:
+To update the files in `tests/browser/fixtures/solr-fake/`, run the test suite with
+environment variable `UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL` set to the URL of the
+`select` endpoint of the Solr server whose responses should be stored as the new
+fixture files.  The URL will be of the form `http://[HOST]:[PORT]/solr/open-square-metadata/select`.
 
-1) Make any desired changes to the Solr requests in the
-tests.
-
-2) Comment out the `onPrepare` hook code in `tests/browser/conf/wdio.main.conf.js`
-that automatically starts the Solr fake (see previous section).
-
-3) Start the Solr fake manually with the `--update-solr-responses-solr-server-url`
-option set to the `select` endpoint on the live Solr server to be used for updating
-the fixture data:
- 
-    ```bash
-    # At project root
-    node node_modules/dlts-solr-fake/cli.js tests/browser/fixtures/index.json tests/browser/fixtures --update-solr-responses-solr-server-url=http://[SOLR HOST]:[PORT]/solr/enm-pages/select --port 3000
-    ```
-
-4) Run the tests containing the Solr request changes.
-
-The `index.json` and Solr response files in `tests/browser/fixtures/` will be updated
-by the Solr fake.
+The `index.json` and Solr response files in `tests/browser/fixtures/solr-fake/` will be updated
+by the Solr fake while the test suite is running.  Note that the golden files can
+be updated at the same time by setting the appropriate environment variable.
+See [Golden files](#golden-files) below.
 
 #### Golden files
 
 The initial golden files were created by a script which generated golden file data
-from the Solr fake fixture files in `tests/browser/fixtures/`.  The fixture files
+from the Solr fake fixture files in `tests/browser/fixtures/solr-fake/`.  The fixture files
 were generated from the live Solr indexes which themselves were programmatically
 verified against the metadata files in
 [NYULibraries/dlts-epub-metadata](https://github.com/NYULibraries).
