@@ -2,7 +2,7 @@ const path = require( 'path' );
 const VisualRegressionCompare = require( 'wdio-visual-regression-service/compare' );
 
 const solrFake = require( 'dlts-solr-fake' );
-const SOLR_FAKE_RESPONSES_DIRECTORY = path.join( __dirname, '../fixtures' );
+const SOLR_FAKE_RESPONSES_DIRECTORY = path.join( __dirname, '../fixtures/solr-fake' );
 
 function getScreenshotName( basePath ) {
     return function ( context ) {
@@ -236,11 +236,18 @@ exports.config = {
      */
     onPrepare : function ( config, capabilities ) {
         if ( this.solrFake ) {
-            solrFake.startSolrFake(
-                {
-                    solrResponsesDirectory : SOLR_FAKE_RESPONSES_DIRECTORY,
-                }
-            );
+            const options = {
+                solrResponsesDirectory : SOLR_FAKE_RESPONSES_DIRECTORY,
+            };
+
+            // UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL environment variable if used
+            // should be of the form:
+            // http://[HOST]:[PORT]/solr/open-square-metadata/select
+            if ( process.env.UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL ) {
+                options.updateSolrResponsesSolrServerUrl = process.env.UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL;
+            }
+
+            solrFake.startSolrFake( options );
         }
     },
     /**
