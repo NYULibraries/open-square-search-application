@@ -31,6 +31,7 @@ exports.config = {
     //
     specs : [
         'tests/browser/tests/errors.js',
+        'tests/browser/tests/footer.js',
         'tests/browser/tests/google-analytics.js',
         'tests/browser/tests/navbar.js',
         'tests/browser/tests/search-form.js',
@@ -43,6 +44,9 @@ exports.config = {
     suites : {
         'errors' : [
             'tests/browser/tests/errors.js',
+        ],
+        'footer' : [
+            'tests/browser/tests/footer.js',
         ],
         'google-analytics' : [
             'tests/browser/tests/google-analytics.js',
