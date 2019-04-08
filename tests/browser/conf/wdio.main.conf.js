@@ -2,7 +2,7 @@ const path = require( 'path' );
 const VisualRegressionCompare = require( 'wdio-visual-regression-service/compare' );
 
 const solrFake = require( 'dlts-solr-fake' );
-const SOLR_FAKE_RESPONSES_DIRECTORY = path.join( __dirname, '../fixtures' );
+const SOLR_FAKE_RESPONSES_DIRECTORY = path.join( __dirname, '../fixtures/solr-fake' );
 
 function getScreenshotName( basePath ) {
     return function ( context ) {
