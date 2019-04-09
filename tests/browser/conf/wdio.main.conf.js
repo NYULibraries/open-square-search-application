@@ -1,6 +1,6 @@
 const path = require( 'path' );
 
-const solrFake = require( 'dlts-solr-fake' );
+const solrFake                      = require( 'dlts-solr-fake' );
 const SOLR_FAKE_RESPONSES_DIRECTORY = path.join( __dirname, '../fixtures/solr-fake' );
 
 exports.config = {
@@ -22,34 +22,35 @@ exports.config = {
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
-    specs : [
+    specs                  : [
         'tests/browser/tests/errors.js',
         'tests/browser/tests/footer.js',
         'tests/browser/tests/google-analytics.js',
         'tests/browser/tests/navbar.js',
         'tests/browser/tests/search-form.js',
-        'tests/browser/tests/search-results.js',    ],
+        'tests/browser/tests/search-results.js',
+    ],
     // Patterns to exclude.
-    exclude : [
+    exclude                : [
         // 'path/to/excluded/files'
     ],
-    suites : {
-        'errors' : [
+    suites                 : {
+        'errors'           : [
             'tests/browser/tests/errors.js',
         ],
-        'footer' : [
+        'footer'           : [
             'tests/browser/tests/footer.js',
         ],
         'google-analytics' : [
             'tests/browser/tests/google-analytics.js',
         ],
-        'navbar' : [
+        'navbar'           : [
             'tests/browser/tests/navbar.js',
         ],
-        'search-form' : [
+        'search-form'      : [
             'tests/browser/tests/search-form.js',
         ],
-        'search-results' : [
+        'search-results'   : [
             'tests/browser/tests/search-results.js',
         ],
     },
@@ -69,20 +70,20 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances : 6,
+    maxInstances           : 6,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities : [
+    capabilities           : [
         {
             // maxInstances can get overwritten per capability. So if you have an in-house Selenium
             // grid with only 5 firefox instances available you can make sure that not more than
             // 5 instances get started at a time.
             // maxInstances : 5,
             //
-            browserName          : 'chrome',
+            browserName   : 'chrome',
             chromeOptions : {
                 // to run chrome headless the following flags are required
                 // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
@@ -102,7 +103,7 @@ exports.config = {
             browserName          : 'firefox',
             'moz:firefoxOptions' : {
                 // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-                args : ['-headless'],
+                args : [ '-headless' ],
             },
             // If outputDir is provided WebdriverIO can capture driver session logs
             // it is possible to configure which logTypes to include/exclude.
@@ -157,7 +158,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services               : ['selenium-standalone'],
+    services               : [ 'selenium-standalone' ],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -178,7 +179,7 @@ exports.config = {
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
     mochaOpts              : {
-        compilers : ['js:@babel/register'],
+        compilers : [ 'js:@babel/register' ],
         retries   : 5,
         timeout   : 60000,
         ui        : 'tdd',
@@ -196,7 +197,7 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    onPrepare: function (config, capabilities) {
+    onPrepare              : function ( config, capabilities ) {
         if ( this.solrFake ) {
             const options = {
                 solrResponsesDirectory : SOLR_FAKE_RESPONSES_DIRECTORY,
@@ -310,10 +311,10 @@ exports.config = {
     // onComplete: function(exitCode, config, capabilities, results) {
     // },
     /**
-    * Gets executed when a refresh happens.
-    * @param {String} oldSessionId session ID of the old session
-    * @param {String} newSessionId session ID of the new session
-    */
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
     // onReload: function(oldSessionId, newSessionId) {
     // }
 };
