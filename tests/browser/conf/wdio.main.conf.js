@@ -184,6 +184,10 @@ exports.config = {
         timeout   : 60000,
         ui        : 'tdd',
     },
+    // DLTS Solr Fake
+    solrFake               : {
+        url : 'http://localhost:3000/',
+    },
     //
     // =====
     // Hooks
