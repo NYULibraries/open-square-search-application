@@ -1062,6 +1062,13 @@
   dependencies:
     "@wdio/config" "^5.7.8"
 
+"@wdio/reporter@^5.7.8":
+  version "5.7.8"
+  resolved "https://registry.yarnpkg.com/@wdio/reporter/-/reporter-5.7.8.tgz#41a6efaeda7403050c15283a9b51e2bb4bad6f77"
+  integrity sha512-WufRUkEqFF3EoI6FqSUyzW2NHv7zPNha76Qybp6FSRwZ+W3PW5TAJDHhFK0vRT+iFXNAnfs/PgGAbsFX454o6g==
+  dependencies:
+    fs-extra "^7.0.1"
+
 "@wdio/runner@^5.7.9":
   version "5.7.9"
   resolved "https://registry.yarnpkg.com/@wdio/runner/-/runner-5.7.9.tgz#8ba93fadb0dff54b57a3598c636ce3b7b496e870"
@@ -1082,6 +1089,15 @@
     "@types/selenium-standalone" "^6.15.0"
     fs-extra "^6.0.1"
     selenium-standalone "^6.15.1"
+
+"@wdio/spec-reporter@^5.7.9":
+  version "5.7.9"
+  resolved "https://registry.yarnpkg.com/@wdio/spec-reporter/-/spec-reporter-5.7.9.tgz#bcc3f0394b8ec39a93ff8af61bfdaadff10ed713"
+  integrity sha512-/Mm/66xwV2Dw05O6BAmaLQD2a/8i4ubF2KkscYl3zlBHdksJQ801qElo5CEN6qZWjUfvEvSa5z2pY0Wls1/JuQ==
+  dependencies:
+    "@wdio/reporter" "^5.7.8"
+    chalk "^2.3.2"
+    pretty-ms "^3.1.0"
 
 "@wdio/sync@^5.7.9":
   version "5.7.9"
@@ -7109,6 +7125,11 @@ parse-json@^4.0.0:
     error-ex "^1.3.1"
     json-parse-better-errors "^1.0.1"
 
+parse-ms@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/parse-ms/-/parse-ms-1.0.1.tgz#56346d4749d78f23430ca0c713850aef91aa361d"
+  integrity sha1-VjRtR0nXjyNDDKDHE4UK75GqNh0=
+
 parse5@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
@@ -7673,6 +7694,13 @@ pretty-error@^2.0.2:
   dependencies:
     renderkid "^2.0.1"
     utila "~0.4"
+
+pretty-ms@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/pretty-ms/-/pretty-ms-3.2.0.tgz#87a8feaf27fc18414d75441467d411d6e6098a25"
+  integrity sha512-ZypexbfVUGTFxb0v+m1bUyy92DHe5SyYlnyY0msyms5zd3RwyvNgyxZZsXXgoyzlxjx5MiqtXUdhUfvQbe0A2Q==
+  dependencies:
+    parse-ms "^1.0.0"
 
 private@^0.1.6:
   version "0.1.8"
