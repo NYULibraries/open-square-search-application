@@ -22,12 +22,9 @@
     "test:browser:prod": "node_modules/.bin/wdio tests/browser/conf/wdio.prod.conf.js"
   },
   "dependencies": {
-    "@wdio/cli": "^5.7.10",
-    "@wdio/spec-reporter": "^5.7.9",
     "font-awesome": "4.7.0",
     "vue": "^2.5.17",
-    "vuex": "^3.0.1",
-    "webdriver": "^5.7.9"
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -40,9 +37,11 @@
     "@vue/cli-service": "^3.2.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "^1.0.0-beta.20",
+    "@wdio/cli": "^5.7.12",
     "@wdio/local-runner": "^5.7.9",
     "@wdio/mocha-framework": "^5.7.8",
     "@wdio/selenium-standalone-service": "^5.7.8",
+    "@wdio/spec-reporter": "^5.7.9",
     "@wdio/sync": "^5.7.9",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
@@ -54,7 +53,8 @@
     "node-sass": "^4.9.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "webdriver": "^5.7.12"
   },
   "engines": {
     "node": ">= 6.0.0",
