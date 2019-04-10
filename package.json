@@ -54,8 +54,7 @@
     "node-sass": "^4.9.0",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.17",
-    "wdio-chromedriver-service": "^5.0.1"
+    "vue-template-compiler": "^2.5.17"
   },
   "engines": {
     "node": ">= 6.0.0",
