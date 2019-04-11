@@ -16,7 +16,7 @@ suite( 'Search form', function () {
         // has no stored result to send back.
         SearchPage.search( '[NO SOLR FAKE RESULTS FOR THIS SEARCH]' );
 
-        assert( SearchPage.spinner.isVisible(), 'Spinner did not appear' );
+        assert( SearchPage.spinner.isDisplayed(), 'Spinner did not appear' );
     } );
 
     test(

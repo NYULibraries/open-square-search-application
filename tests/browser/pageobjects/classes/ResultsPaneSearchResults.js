@@ -14,18 +14,25 @@ class ResultsPaneSearchResults {
         let books   = [];
 
         results.forEach( ( result ) => {
+            const id = result.getAttribute( 'id' );
+            const parentElementSelector = `div[ id = "${ id }" ]`;
+
             let book = {};
 
-            book.author          = innerHtml( result.element( '.author' ).getHTML() );
-            book.description     = innerHtml( result.element( '.description' ).getHTML() );
-            book.isbn            = innerHtml( result.getAttribute( 'id' ) );
-            book.publicationDate = innerHtml( result.element( '.pubdate' ).getHTML() )
+            book.author          = innerHtml( $( `${ parentElementSelector } .author` ).getHTML() );
+            book.description     = innerHtml( $( `${ parentElementSelector } .description` ).getHTML() );
+            book.isbn            = id;
+            book.publicationDate = innerHtml( $( `${ parentElementSelector } .pubdate` ).getHTML() )
                 .replace( /<span>/g, '' )
                 .replace( /<\/span>/g, '' )
                 .replace( /Published: /, '' );
-            book.subtitle        = innerHtml( result.element( '.book-subtitle' ).getHTML() );
-            book.thumbnail       = new URL( result.element( '.thumb img' ).getAttribute( 'src' ) ).pathname;
-            book.title           = innerHtml( result.element( '.book-title' ).getHTML() );
+            book.subtitle        = innerHtml( $( `${ parentElementSelector } .book-subtitle` ).getHTML() );
+            book.thumbnail       = $( `${ parentElementSelector } .thumb img` ).getAttribute( 'src' );
+            // When testing Chrome, the absolute URL is returned instead of the relative path
+            if ( book.thumbnail.startsWith( 'http' ) ) {
+                book.thumbnail = new URL( book.thumbnail ).pathname;
+            }
+            book.title           = innerHtml( $( `${ parentElementSelector } .book-title` ).getHTML() );
 
             books.push( book );
         } );

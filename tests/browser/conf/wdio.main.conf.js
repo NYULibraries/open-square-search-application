@@ -1,24 +1,17 @@
 const path = require( 'path' );
-const VisualRegressionCompare = require( 'wdio-visual-regression-service/compare' );
 
-const solrFake = require( 'dlts-solr-fake' );
+const solrFake                      = require( 'dlts-solr-fake' );
 const SOLR_FAKE_RESPONSES_DIRECTORY = path.join( __dirname, '../fixtures/solr-fake' );
 
-function getScreenshotName( basePath ) {
-    return function ( context ) {
-        let type = context.type;
-        let testName = context.test.title;
-        let browserVersion = parseInt( context.browser.version, 10 );
-        let browserName = context.browser.name;
-        let browserViewport = context.meta.viewport;
-        let browserWidth = browserViewport.width;
-        let browserHeight = browserViewport.height;
-
-        return path.join( basePath, `${ testName }_${ type }_${ browserName }_v${ browserVersion }_${ browserWidth }x${ browserHeight }.png` );
-    };
-}
-
 exports.config = {
+    //
+    // ====================
+    // Runner Configuration
+    // ====================
+    //
+    // WebdriverIO allows it to run your tests in arbitrary locations (e.g. locally or
+    // on a remote machine).
+    runner : 'local',
 
     //
     // ==================
@@ -29,7 +22,7 @@ exports.config = {
     // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
-    specs : [
+    specs                  : [
         'tests/browser/tests/errors.js',
         'tests/browser/tests/footer.js',
         'tests/browser/tests/google-analytics.js',
@@ -38,26 +31,26 @@ exports.config = {
         'tests/browser/tests/search-results.js',
     ],
     // Patterns to exclude.
-    exclude : [
+    exclude                : [
         // 'path/to/excluded/files'
     ],
-    suites : {
-        'errors' : [
+    suites                 : {
+        'errors'           : [
             'tests/browser/tests/errors.js',
         ],
-        'footer' : [
+        'footer'           : [
             'tests/browser/tests/footer.js',
         ],
         'google-analytics' : [
             'tests/browser/tests/google-analytics.js',
         ],
-        'navbar' : [
+        'navbar'           : [
             'tests/browser/tests/navbar.js',
         ],
-        'search-form' : [
+        'search-form'      : [
             'tests/browser/tests/search-form.js',
         ],
-        'search-results' : [
+        'search-results'   : [
             'tests/browser/tests/search-results.js',
         ],
     },
@@ -77,37 +70,45 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances : 6,
+    maxInstances           : 6,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities : [
+    capabilities           : [
         {
             // maxInstances can get overwritten per capability. So if you have an in-house Selenium
             // grid with only 5 firefox instances available you can make sure that not more than
             // 5 instances get started at a time.
-            // maxInstances  : 5,
+            // maxInstances : 5,
             //
-            browserName   : 'chrome',
-            chromeOptions : {
+            browserName          : 'chrome',
+            'goog:chromeOptions' : {
                 // to run chrome headless the following flags are required
                 // (see https://developers.google.com/web/updates/2017/04/headless-chrome)
                 args : [ '--headless' ],
             },
+            // If outputDir is provided WebdriverIO can capture driver session logs
+            // it is possible to configure which logTypes to include/exclude.
+            // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+            // excludeDriverLogs: ['bugreport', 'server'],
         },
         {
             // maxInstances can get overwritten per capability. So if you have an in-house Selenium
             // grid with only 5 firefox instances available you can make sure that not more than
             // 5 instances get started at a time.
-            // maxInstances         : 5,
+            // maxInstances : 5,
             //
             browserName          : 'firefox',
             'moz:firefoxOptions' : {
                 // flag to activate Firefox headless mode (see https://github.com/mozilla/geckodriver/blob/master/README.md#firefox-capabilities for more details about moz:firefoxOptions)
-                args : ['-headless'],
+                args : [ '-headless' ],
             },
+            // If outputDir is provided WebdriverIO can capture driver session logs
+            // it is possible to configure which logTypes to include/exclude.
+            // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+            // excludeDriverLogs: ['bugreport', 'server'],
         },
     ],
     //
@@ -116,34 +117,32 @@ exports.config = {
     // ===================
     // Define all options that are relevant for the WebdriverIO instance here
     //
-    // By default WebdriverIO commands are executed in a synchronous way using
-    // the wdio-sync package. If you still want to run your tests in an async way
-    // e.g. using promises you can set the sync option to false.
-    sync                   : true,
-    //
-    // Level of logging verbosity: silent | verbose | command | data | result | error
+    // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel               : 'silent',
     //
-    // Enables colors for log output.
-    coloredLogs            : true,
-    //
-    // Warns when a deprecated command is used
-    // TODO: re-enable this after finding a way to fix https://jira.nyu.edu/jira/browse/NYUP-451
-    // without using browser.submitForm()
-    deprecationWarnings    : false,
+    // Set specific log levels per logger
+    // loggers:
+    // - webdriver, webdriverio
+    // - wdio-applitools-service, wdio-browserstack-service, wdio-devtools-service, wdio-sauce-service
+    // - wdio-mocha-framework, wdio-jasmine-framework
+    // - wdio-local-runner, wdio-lambda-runner
+    // - wdio-sumologic-reporter
+    // - wdio-cli, wdio-config, wdio-sync, wdio-utils
+    // Level of logging verbosity: trace | debug | info | warn | error | silent
+    // logLevels: {
+    // webdriver: 'info',
+    // 'wdio-applitools-service': 'info'
+    // },
     //
     // If you only want to run your tests until a specific amount of tests have failed use
     // bail (default is 0 - don't bail, run all tests).
     bail                   : 0,
     //
-    // Saves a screenshot to a given path if a command fails.
-    screenshotPath         : './tests/browser/errorShots/',
-    //
     // Set a base URL in order to shorten url command calls. If your `url` parameter starts
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl                : 'http://localhost/open-square/search/',
+    baseUrl                : 'http://opensquare-local.nyupress.org/search/',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout         : 30000,
@@ -155,70 +154,38 @@ exports.config = {
     // Default request retries count
     connectionRetryCount   : 3,
     //
-    // Initialize the browser instance with a WebdriverIO plugin. The object should have the
-    // plugin name as key and the desired plugin options as properties. Make sure you have
-    // the plugin installed before running any tests. The following plugins are currently
-    // available:
-    // WebdriverCSS: https://github.com/webdriverio/webdrivercss
-    // WebdriverRTC: https://github.com/webdriverio/webdriverrtc
-    // Browserevent: https://github.com/webdriverio/browserevent
-    // plugins: {
-    //     webdrivercss: {
-    //         screenshotRoot: 'my-shots',
-    //         failedComparisonsRoot: 'diffs',
-    //         misMatchTolerance: 0.05,
-    //         screenWidth: [320,480,640,1024]
-    //     },
-    //     webdriverrtc: {},
-    //     browserevent: {}
-    // },
-    //
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services               : ['selenium-standalone', 'visual-regression', 'chromedriver', 'screenshots-cleanup'],
-    cleanScreenshotsFolder : {
-        folder  : './tests/browser/errorShots/',
-        pattern : '/**/ERROR_*',
-    },
-    visualRegression : {
-        compare : new VisualRegressionCompare.LocalCompare(
-            {
-                referenceName     : getScreenshotName( path.join( process.cwd(), 'screenshots/reference' ) ),
-                screenshotName    : getScreenshotName( path.join( process.cwd(), 'screenshots/screen' ) ),
-                diffName          : getScreenshotName( path.join( process.cwd(), 'screenshots/diff' ) ),
-                misMatchTolerance : 0.01,
-            }
-        ),
-        viewportChangePause : 300,
-        viewports           : [{ width : 320, height : 480 }, { width : 480, height : 320 }, { width : 1024, height : 768 }],
-        orientations        : ['landscape', 'portrait'],
-    },
+    services               : [ 'selenium-standalone' ],
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
-    // see also: http://webdriver.io/guide/testrunner/frameworks.html
+    // see also: https://webdriver.io/docs/frameworks.html
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework : 'mocha',
+    framework              : 'mocha',
+    //
+    // The number of times to retry the entire specfile when it fails as a whole
+    // specFileRetries: 1,
     //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
-    // see also: http://webdriver.io/guide/reporters/dot.html
-    reporters : [ 'spec' ],
+    // see also: https://webdriver.io/docs/dot-reporter.html
+    reporters              : [ 'spec' ],
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
-    mochaOpts : {
-        compilers : ['js:@babel/register'],
+    mochaOpts              : {
+        compilers : [ 'js:@babel/register' ],
         retries   : 5,
-        timeout   : 30000,
+        timeout   : 60000,
         ui        : 'tdd',
     },
     // DLTS Solr Fake
-    solrFake : {
+    solrFake               : {
         url : 'http://localhost:3000/',
     },
     //
@@ -234,7 +201,7 @@ exports.config = {
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
      */
-    onPrepare : function ( config, capabilities ) {
+    onPrepare              : function ( config, capabilities ) {
         if ( this.solrFake ) {
             const options = {
                 solrResponsesDirectory : SOLR_FAKE_RESPONSES_DIRECTORY,
@@ -294,13 +261,13 @@ exports.config = {
     // beforeHook: function () {
     // },
     /**
-     * Hook that gets executed _after_ a hook within the suite ends (e.g. runs after calling
+     * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
      * afterEach in Mocha)
      */
     // afterHook: function () {
     // },
     /**
-     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) ends.
+     * Function to be executed after a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
      * @param {Object} test test details
      */
     // afterTest: function (test) {
@@ -343,7 +310,15 @@ exports.config = {
      * @param {Object} exitCode 0 - success, 1 - fail
      * @param {Object} config wdio configuration object
      * @param {Array.<Object>} capabilities list of capabilities details
+     * @param {<Object>} results object containing test results
      */
-    // onComplete: function(exitCode, config, capabilities) {
+    // onComplete: function(exitCode, config, capabilities, results) {
+    // },
+    /**
+     * Gets executed when a refresh happens.
+     * @param {String} oldSessionId session ID of the old session
+     * @param {String} newSessionId session ID of the new session
+     */
+    // onReload: function(oldSessionId, newSessionId) {
     // }
 };

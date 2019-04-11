@@ -20,7 +20,7 @@ class SearchPage extends Page {
     }
 
     get alertText() {
-        return browser.alertText;
+        return browser.getAlertText();
     }
 
     get baseUrl() {
@@ -54,8 +54,8 @@ class SearchPage extends Page {
     open( options ) {
         let url = this.paths.search;
 
-        if ( browser.options.solrFake ) {
-            url += `?solr=${ browser.options.solrFake.url }`;
+        if ( browser.config.solrFake ) {
+            url += `?solr=${ browser.config.solrFake.url }`;
 
             if ( options && options.solrErrorSimulation ) {
                 url += '&solrErrorSimulation=' + options.solrErrorSimulation;
@@ -83,7 +83,7 @@ class SearchPage extends Page {
     searchAndWaitForResults( query ) {
         this.searchForm.searchBox.addValue( query );
         this.searchForm.submit();
-        this.resultsPane.results._element.waitForVisible();
+        this.resultsPane.results._element.waitForDisplayed();
     }
 
     searchResultsSnapshot() {
