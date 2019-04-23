@@ -172,7 +172,7 @@ UPDATE_GOLDEN_FILES=1 yarn test:browser:local
 
 ### `solr`: Solr override
 
-The Solr server used for ENM Search can be overridden using the `solr` query parameter.
+The Solr server used for Open Square Search can be overridden using the `solr` query parameter.
 
 Example:
 
