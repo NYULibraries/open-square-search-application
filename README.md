@@ -142,15 +142,26 @@ The `index.json` file maps Solr request query strings to response files.
 
 #### Update Solr fixture data
 
-To update the files in `tests/browser/fixtures/solr-fake/`, run the test suite with
-environment variable `UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL` set to the URL of the
-`select` endpoint of the Solr server whose responses should be stored as the new
-fixture files.  The URL will be of the form `http://[HOST]:[PORT]/solr/open-square-metadata/select`.
+To update the files in `tests/browser/fixtures/solr-fake/`:
+
+1) Make any desired changes to the Solr requests in the tests, if any.  This may involve
+editing the [golden files](#golden-files).
+
+2) Make any desired changes to the production Solr index, if any.  The production
+Solr index will be used to generate the new Solr fixture data.
+
+3) Run `yarn test:browser:update:fixtures`.
 
 The `index.json` and Solr response files in `tests/browser/fixtures/solr-fake/` will be updated
-by the Solr fake while the test suite is running.  Note that the golden files can
-be updated at the same time by setting the appropriate environment variable.
-See [Golden files](#golden-files) below.
+by the Solr fake.
+
+Note that even though the tests in `search-form.js` use the Solr fake, they are
+not included in the `test:browser:update:fixtures` script because the spinner test
+is designed to perform a search for which the Solr fake will never have a stored
+response.  This is to ensure the spinner stays visible long enough for the test
+to register its appearance.  The other test in the `search-form` suite uses a
+blank search which should never return results, so the fixture file should never
+need to be updated.
 
 #### Golden files
 
@@ -161,18 +172,17 @@ verified against the metadata files in
 [NYULibraries/dlts-epub-metadata](https://github.com/NYULibraries).
  
 In the future, if the fixture data for the Solr fake changes, the golden files
-can be updated by re-running all tests with environment variable `UPDATE_GOLDEN_FILES`
-set to `1`.  Example:
+can be updated by running `yarn test:browser:update:golden`.
 
-```
-UPDATE_GOLDEN_FILES=1 yarn test:browser:local
-```
+Note that there may be some tests that do not verify against golden files but
+have expected values directly hardcoded into the scripts.  These will need to be updated
+manually if they are broken by the data changes to the Solr fake.
 
 ## Query parameters
 
 ### `solr`: Solr override
 
-The Solr server used for ENM Search can be overridden using the `solr` query parameter.
+The Solr server used for Open Square Search can be overridden using the `solr` query parameter.
 
 Example:
 
