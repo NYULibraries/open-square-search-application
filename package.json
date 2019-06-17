@@ -1,6 +1,6 @@
 {
   "name": "open-square-search-application",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Vue.js search SPA for the DLTS Open Square website.",
   "author": "David <da70@nyu.edu>",
   "private": true,
