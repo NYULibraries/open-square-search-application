@@ -23,7 +23,8 @@
     "test:browser:stage": "node_modules/.bin/wdio tests/browser/conf/wdio.stage.conf.js",
     "test:browser:prod": "node_modules/.bin/wdio tests/browser/conf/wdio.prod.conf.js",
     "test:browser:update:fixtures": "UPDATE_SOLR_RESPONSES_SOLR_SERVER_URL=http://discovery1.dlib.nyu.edu/solr/open-square-metadata/select node_modules/.bin/wdio tests/browser/conf/wdio.local.chrome.conf.js --suite search-results",
-    "test:browser:update:golden": "UPDATE_GOLDEN_FILES=1 node_modules/.bin/wdio tests/browser/conf/wdio.local.chrome.conf.js --suite search-results"
+    "test:browser:update:golden": "UPDATE_GOLDEN_FILES=1 node_modules/.bin/wdio tests/browser/conf/wdio.local.chrome.conf.js --suite search-results",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "font-awesome": "4.7.0",
