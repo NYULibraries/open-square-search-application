@@ -69,7 +69,8 @@ module.exports = {
         // Always terminate statements with semi-colons
         'semi'                        : [ 'error', 'always' ],
         'space-before-function-paren' : [ 'error',
-            { 'anonymous'  : 'always',
+            {
+                'anonymous'  : 'always',
                 'named'      : 'never',
                 'asyncArrow' : 'always',
             },
