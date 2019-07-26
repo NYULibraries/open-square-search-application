@@ -5,7 +5,7 @@ const DEFAULT_SOLR_HOST      = 'discovery1.dlib.nyu.edu';
 const DEFAULT_SOLR_PORT      = 80;
 const DEFAULT_SOLR_PROTOCOL  = 'http';
 
-const ERROR_SIMULATION_SEARCH       = 'search';
+const ERROR_SIMULATION_SEARCH = 'search';
 
 let errorSimulation;
 let highlightFragmentSize;
