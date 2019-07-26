@@ -1,7 +1,7 @@
 const state = function () {
     return {
-        query                          : null,
-        queryFields                    : {},
+        query                      : null,
+        queryFields                : {},
         selectedSubjectsFacetItems : [],
     };
 };
