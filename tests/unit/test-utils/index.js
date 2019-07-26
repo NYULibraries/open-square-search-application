@@ -11,8 +11,8 @@ function createLocalVueWithVuex() {
 
 function createReadonlyStore( query, queryFields, selectedSubjectFieldFacetItems ) {
     const getters = {
-        query                   : () => query,
-        queryFields             : () => queryFields,
+        query                     : () => query,
+        queryFields               : () => queryFields,
         selectedSubjectFacetItems : () => selectedSubjectFieldFacetItems,
     };
 
