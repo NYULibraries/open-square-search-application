@@ -1,6 +1,12 @@
 export default {
     addSelectedSubjectFacetItem( state, subjectFacetItem ) {
-        state.selectedSubjectFacetItems.push( subjectFacetItem );
+        if ( typeof subjectFacetItem === 'string' && subjectFacetItem !== '' ) {
+            state.selectedSubjectFacetItems.push( subjectFacetItem );
+        } else {
+            console.error( `Invalid argument passed to addSelectedSubjectFacetItem: ` +
+                           ( subjectFacetItem === '' ? '[empty string]' : subjectFacetItem )
+            );
+        }
     },
     clearSelectedSubjectFacetItems( state ) {
         state.selectedSubjectFacetItems = [];
@@ -15,6 +21,15 @@ export default {
         state.query = query;
     },
     setQueryFields( state, queryFields ) {
-        state.queryFields = queryFields;
+        if ( Array.isArray( queryFields ) ) {
+            state.queryFields = queryFields;
+        } else {
+            console.error( `Invalid argument passed to queryFields: ` +
+                           ( Array.isArray( queryFields ) && queryFields.length === 0
+                               ? '[empty array]'
+                               : queryFields )
+            );
+            state.queryFields = [];
+        }
     },
 };
