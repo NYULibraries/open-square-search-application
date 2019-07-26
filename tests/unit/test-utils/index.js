@@ -9,11 +9,11 @@ function createLocalVueWithVuex() {
     return localVue;
 }
 
-function createReadonlyStore( query, queryFields, selectedTopicFieldFacetItems ) {
+function createReadonlyStore( query, queryFields, selectedSubjectFieldFacetItems ) {
     const getters = {
         query                   : () => query,
         queryFields             : () => queryFields,
-        selectedTopicFacetItems : () => selectedTopicFieldFacetItems,
+        selectedSubjectFacetItems : () => selectedSubjectFieldFacetItems,
     };
 
     return new Vuex.Store(
@@ -23,41 +23,7 @@ function createReadonlyStore( query, queryFields, selectedTopicFieldFacetItems )
     );
 }
 
-function queryFieldsUI() {
-    // From App.vue QUERY_FIELDS_UI
-    // Maybe need to DRY this up?
-    return [
-        {
-            dciLabel : 'full texts',
-            label    : 'Full Text',
-            name     : 'fulltext',
-            value    : 'pageText',
-        },
-        {
-            dciLabel : 'topics',
-            label    : 'Topics',
-            name     : 'topics',
-            value    : 'topicNames',
-        },
-    ];
-}
-
-function queryFieldsUILabels() {
-    return queryFieldsUI()
-        .map( queryFieldUI => queryFieldUI.label )
-        .sort();
-}
-
-function queryFieldsUIValues() {
-    return queryFieldsUI()
-        .map( queryFieldUI => queryFieldUI.value )
-        .sort();
-}
-
 export {
     createLocalVueWithVuex,
     createReadonlyStore,
-    queryFieldsUI,
-    queryFieldsUILabels,
-    queryFieldsUIValues,
 };
