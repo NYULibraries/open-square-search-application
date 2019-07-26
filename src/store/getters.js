@@ -3,5 +3,5 @@ export default {
 
     queryFields : state => state.queryFields,
 
-    selectedSubjectsFacetItems : state => state.selectedSubjectsFacetItems,
+    selectedSubjectFacetItems : state => state.selectedSubjectFacetItems,
 };

@@ -1,12 +1,12 @@
 export default {
-    addSelectedSubjectsFacetItem( { commit }, subjectsFacetItem ) {
-        commit( 'addSelectedSubjectsFacetItem', subjectsFacetItem );
+    addSelectedSubjectFacetItem( { commit }, subjectFacetItem ) {
+        commit( 'addSelectedSubjectFacetItem', subjectFacetItem );
     },
-    clearSelectedSubjectsFacetItems( { commit } ) {
-        commit( 'clearSelectedSubjectsFacetItems' );
+    clearSelectedSubjectFacetItems( { commit } ) {
+        commit( 'clearSelectedSubjectFacetItems' );
     },
-    removeSelectedSubjectsFacetItem( { commit }, subjectsFacetItem ) {
-        commit( 'removeSelectedSubjectsFacetItem', subjectsFacetItem );
+    removeSelectedSubjectFacetItem( { commit }, subjectFacetItem ) {
+        commit( 'removeSelectedSubjectFacetItem', subjectFacetItem );
     },
     setQuery( { commit }, query ) {
         commit( 'setQuery', query );

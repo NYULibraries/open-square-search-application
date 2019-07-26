@@ -1,14 +1,14 @@
 export default {
-    addSelectedSubjectsFacetItem( state, subjectsFacetItem ) {
-        state.selectedSubjectsFacetItems.push( subjectsFacetItem );
+    addSelectedSubjectFacetItem( state, subjectFacetItem ) {
+        state.selectedSubjectFacetItems.push( subjectFacetItem );
     },
-    clearSelectedSubjectsFacetItems( state ) {
-        state.selectedSubjectsFacetItems = [];
+    clearSelectedSubjectFacetItems( state ) {
+        state.selectedSubjectFacetItems = [];
     },
-    removeSelectedSubjectsFacetItem( state, subjectsFacetItem ) {
-        const index = state.selectedSubjectsFacetItems.indexOf( subjectsFacetItem );
+    removeSelectedSubjectFacetItem( state, subjectFacetItem ) {
+        const index = state.selectedSubjectFacetItems.indexOf( subjectFacetItem );
         if ( index > -1 ) {
-            state.selectedSubjectsFacetItems.splice( index, 1 );
+            state.selectedSubjectFacetItems.splice( index, 1 );
         }
     },
     setQuery( state, query ) {
