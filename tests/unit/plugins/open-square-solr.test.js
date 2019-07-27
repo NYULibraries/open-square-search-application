@@ -36,15 +36,22 @@ const QUERY_FIELDS = Object.freeze( {
     },
 } );
 
-describe( 'enm-solr plugin', () => {
-    const OPEN_SQUARE_SOLR_OPTIONS = Object.freeze(
-        {
-            solrCorePath : '/solr/open-square-metadata/',
-            solrHost     : 'solr.dlib.nyu.edu',
-            solrPort     : 8983,
-            solrProtocol : 'http',
-        } );
+function createLocalVueWithPlugin( pluginOverrides ) {
+    const defaultOpenSquareSolrOptions = {
+        solrCorePath : '/solr/open-square-metadata/',
+        solrHost     : 'solr.dlib.nyu.edu',
+        solrPort     : 8983,
+        solrProtocol : 'http',
+    };
 
+    const localVue = createLocalVue();
+
+    localVue.use( OpenSquareSolr, merge( defaultOpenSquareSolrOptions, pluginOverrides ) );
+
+    return localVue;
+}
+
+describe( 'enm-solr plugin', () => {
     let localVue;
     let mockFetch;
 
@@ -59,9 +66,7 @@ describe( 'enm-solr plugin', () => {
     beforeEach( () => {
         mockFetch.mockClear();
 
-        localVue = createLocalVue();
-
-        localVue.use( OpenSquareSolr, OPEN_SQUARE_SOLR_OPTIONS );
+        localVue = createLocalVueWithPlugin();
     } );
 
     test( '$solrHighlightFragment size is set to default if not passed in options', () => {
@@ -87,14 +92,11 @@ describe( 'enm-solr plugin', () => {
 
     test( `$solrSearch throws "${ ERROR_SIMULATION_SEARCH } when options.errorSimulation ` +
           `is set to "${ ERROR_SIMULATION_SEARCH }"`, async () => {
-        const options = merge(
+        localVue = createLocalVueWithPlugin(
             {
                 errorSimulation : ERROR_SIMULATION_SEARCH,
-            },
-            OPEN_SQUARE_SOLR_OPTIONS,
+            }
         );
-        localVue = createLocalVue();
-        localVue.use( OpenSquareSolr, options );
 
         await expect(
             localVue.prototype.$solrSearch(
