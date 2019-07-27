@@ -14,11 +14,11 @@ const QUERY_FIELDS = {
         weight    : 4,
     },
     queryField2 : {
-        highlight : true,
+        highlight : false,
         weight    : 1,
     },
     queryField3 : {
-        highlight : true,
+        highlight : false,
         weight    : 2,
     },
     queryField4  : {
@@ -76,7 +76,7 @@ describe( 'enm-solr plugin', () => {
         // Using hardcoded, un-DRY value because a DRY value would basically require
         // reproducing the very code being tested.
         expect( mockFetch ).toHaveBeenCalledWith(
-            'http://solr.dlib.nyu.edu:8983/solr/open-square-metadata/select?q=something&fl=title,subtitle,description,author,date,identifier,coverHref,thumbHref&hl=true&hl.fl=queryField1,queryField2,queryField3,queryField4,queryField5,queryField6&hl.fragsize=500&hl.simple.pre=<mark>&hl.simple.post=</mark>&hl.snippets=1&qf=queryField1^4%20queryField2^1%20queryField3^2%20queryField4^3%20queryField5^4%20queryField6^4&rows=1999&sort=score%20desc,title_sort%20asc&defType=edismax&indent=on&wt=json'
+            'http://solr.dlib.nyu.edu:8983/solr/open-square-metadata/select?q=something&fl=title,subtitle,description,author,date,identifier,coverHref,thumbHref&hl=true&hl.fl=queryField1,queryField4,queryField5,queryField6&hl.fragsize=500&hl.simple.pre=<mark>&hl.simple.post=</mark>&hl.snippets=1&qf=queryField1^4%20queryField2^1%20queryField3^2%20queryField4^3%20queryField5^4%20queryField6^4&rows=1999&sort=score%20desc,title_sort%20asc&defType=edismax&indent=on&wt=json'
         );
     } );
 
