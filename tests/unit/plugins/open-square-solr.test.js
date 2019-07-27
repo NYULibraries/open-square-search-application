@@ -53,19 +53,8 @@ function createLocalVueWithPlugin( pluginOverrides ) {
 
 describe( 'enm-solr plugin', () => {
     let localVue;
-    let mockFetch;
-
-    beforeAll( () => {
-        mockFetch = jest.fn().mockImplementation(
-            () => Promise.resolve( { responseHeader : { status : 0 } } )
-        );
-
-        global.fetch = mockFetch;
-    } );
 
     beforeEach( () => {
-        mockFetch.mockClear();
-
         localVue = createLocalVueWithPlugin();
     } );
 
@@ -78,6 +67,12 @@ describe( 'enm-solr plugin', () => {
     } );
 
     test( '$solrSearch calls fetch with correct arguments', () => {
+        const mockFetch = jest.fn().mockImplementation(
+            () => Promise.resolve( { responseHeader : { status : 0 } } )
+        );
+
+        global.fetch = mockFetch;
+
         localVue.prototype.$solrSearch(
             QUERY,
             QUERY_FIELDS,
@@ -88,6 +83,8 @@ describe( 'enm-solr plugin', () => {
         expect( mockFetch ).toHaveBeenCalledWith(
             'http://solr.dlib.nyu.edu:8983/solr/open-square-metadata/select?q=something&fl=title,subtitle,description,author,date,identifier,coverHref,thumbHref&hl=true&hl.fl=queryField1,queryField4,queryField5,queryField6&hl.fragsize=500&hl.simple.pre=<mark>&hl.simple.post=</mark>&hl.snippets=1&qf=queryField1^4%20queryField2^1%20queryField3^2%20queryField4^3%20queryField5^4%20queryField6^4&rows=1999&sort=score%20desc,title_sort%20asc&defType=edismax&indent=on&wt=json'
         );
+
+        delete global.fetch;
     } );
 
     test( `$solrSearch throws "${ ERROR_SIMULATION_SEARCH } when options.errorSimulation ` +
