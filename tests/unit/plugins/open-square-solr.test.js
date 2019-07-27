@@ -62,6 +62,18 @@ describe( 'enm-solr plugin', () => {
         expect( localVue.prototype.$solrHighlightFragmentSize ).toBe( DEFAULT_HIGHLIGHT_FRAGMENT_SIZE );
     } );
 
+    test( '$solrHighlightFragment size is set by options.highlightFragmentSize', () => {
+        const HIGHLIGHT_FRAGMENT_SIZE = 300;
+
+        localVue = createLocalVueWithPlugin(
+            {
+                highlightFragmentSize : HIGHLIGHT_FRAGMENT_SIZE,
+            },
+        );
+
+        expect( localVue.prototype.$solrHighlightFragmentSize ).toBe( HIGHLIGHT_FRAGMENT_SIZE );
+    } );
+
     test( 'adds $solrSearch to the Vue prototype', () => {
         expect( typeof localVue.prototype.$solrSearch ).toBe( 'function' );
     } );
