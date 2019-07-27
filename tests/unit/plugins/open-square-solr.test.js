@@ -80,7 +80,7 @@ describe( 'enm-solr plugin', () => {
         );
     } );
 
-    test( `throws "${ ERROR_SIMULATION_SEARCH } when options.errorSimulation ` +
+    test( `$solrSearch throws "${ ERROR_SIMULATION_SEARCH } when options.errorSimulation ` +
           `is set to "${ ERROR_SIMULATION_SEARCH }"`, async () => {
         const options = merge(
             {
