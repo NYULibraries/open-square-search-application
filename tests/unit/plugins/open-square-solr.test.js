@@ -9,7 +9,7 @@ const DEFAULT_HIGHLIGHT_FRAGMENT_SIZE = 500;
 const ERROR_SIMULATION_SEARCH         = 'search';
 
 const QUERY = 'something';
-const QUERY_FIELDS = {
+const QUERY_FIELDS = Object.freeze( {
     queryField1 : {
         highlight : true,
         weight    : 4,
@@ -34,7 +34,7 @@ const QUERY_FIELDS = {
         highlight : true,
         weight    : 4,
     },
-};
+} );
 
 describe( 'enm-solr plugin', () => {
     const OPEN_SQUARE_SOLR_OPTIONS = Object.freeze(
