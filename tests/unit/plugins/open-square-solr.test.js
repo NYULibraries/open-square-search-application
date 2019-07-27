@@ -3,9 +3,10 @@ import merge from 'lodash.merge';
 
 import OpenSquareSolr from '@/plugins/open-square-solr';
 
-// Copied from plugin under test.
+// These are copied from plugin under test.
 // Not DRY, but doesn't feel right to export them from the plugin just for the test.
-const ERROR_SIMULATION_SEARCH       = 'search';
+const DEFAULT_HIGHLIGHT_FRAGMENT_SIZE = 500;
+const ERROR_SIMULATION_SEARCH         = 'search';
 
 const QUERY = 'something';
 const QUERY_FIELDS = {
@@ -61,6 +62,10 @@ describe( 'enm-solr plugin', () => {
         localVue = createLocalVue();
 
         localVue.use( OpenSquareSolr, OPEN_SQUARE_SOLR_OPTIONS );
+    } );
+
+    test( '$solrHighlightFragment size is set to default if not passed in options', () => {
+        expect( localVue.prototype.$solrHighlightFragmentSize ).toBe( DEFAULT_HIGHLIGHT_FRAGMENT_SIZE );
     } );
 
     test( 'adds $solrSearch to the Vue prototype', () => {
