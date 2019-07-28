@@ -9,21 +9,6 @@ function createLocalVueWithVuex() {
     return localVue;
 }
 
-function createReadonlyStore( query, queryFields, selectedSubjectFieldFacetItems ) {
-    const getters = {
-        query                     : () => query,
-        queryFields               : () => queryFields,
-        selectedSubjectFacetItems : () => selectedSubjectFieldFacetItems,
-    };
-
-    return new Vuex.Store(
-        {
-            getters,
-        }
-    );
-}
-
 export {
     createLocalVueWithVuex,
-    createReadonlyStore,
 };
