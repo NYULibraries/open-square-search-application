@@ -6,37 +6,7 @@ import Spinner from '@/components/Spinner';
 import { shallowMount } from '@vue/test-utils';
 import merge from 'lodash.merge';
 import Vuex from 'vuex';
-import { createLocalVueWithVuex } from '../test-utils';
-
-const QUERY = 'something';
-const QUERY_FIELDS = Object.freeze(
-{
-        queryField1 : {
-            highlight : true,
-            weight    : 4,
-        },
-        queryField2 : {
-            highlight : false,
-            weight    : 1,
-        },
-        queryField3 : {
-            highlight : false,
-            weight    : 2,
-        },
-        queryField4  : {
-            highlight : true,
-            weight    : 3,
-        },
-        queryField5 : {
-            highlight : true,
-            weight    : 4,
-        },
-        queryField6 : {
-            highlight : true,
-            weight    : 4,
-        },
-    }
-);
+import { QUERY, QUERY_FIELDS, createLocalVueWithVuex } from '../test-utils';
 
 const MOCK_SOLR_SEARCH_RESPONSE = Object.freeze(
     require( '../fixtures/solr-responses/solr-search.json' )

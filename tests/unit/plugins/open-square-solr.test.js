@@ -2,39 +2,12 @@ import { createLocalVue } from '@vue/test-utils';
 import merge from 'lodash.merge';
 
 import OpenSquareSolr from '@/plugins/open-square-solr';
+import { QUERY, QUERY_FIELDS } from '../test-utils';
 
 // These are copied from plugin under test.
 // Not DRY, but doesn't feel right to export them from the plugin just for the test.
 const DEFAULT_HIGHLIGHT_FRAGMENT_SIZE = 500;
 const ERROR_SIMULATION_SEARCH         = 'search';
-
-const QUERY = 'something';
-const QUERY_FIELDS = Object.freeze( {
-    queryField1 : {
-        highlight : true,
-        weight    : 4,
-    },
-    queryField2 : {
-        highlight : false,
-        weight    : 1,
-    },
-    queryField3 : {
-        highlight : false,
-        weight    : 2,
-    },
-    queryField4  : {
-        highlight : true,
-        weight    : 3,
-    },
-    queryField5 : {
-        highlight : true,
-        weight    : 4,
-    },
-    queryField6 : {
-        highlight : true,
-        weight    : 4,
-    },
-} );
 
 function createLocalVueWithPlugin( pluginOverrides ) {
     const defaultOpenSquareSolrOptions = {
