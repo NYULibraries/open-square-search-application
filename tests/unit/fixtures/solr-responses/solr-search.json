@@ -1,0 +1,59 @@
+{
+    "response":{"numFound":5,"start":0,"docs":[
+        {
+            "author":["Author One with Author Two, Author Three, Author Four, Author Five and Author Six"],
+            "coverHref":"epub_content/9781111111111/ops/images/9781111111111.jpg",
+            "date":"2018",
+            "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis ut diam quam nulla porttitor. Tellus in hac habitasse platea dictumst vestibulum rhoncus est. Pharetra massa massa ultricies mi quis hendrerit dolor magna eget. Tincidunt dui ut ornare lectus sit amet est. Quam quisque id diam vel quam elementum pulvinar etiam non. Quisque non tellus orci ac auctor augue mauris augue neque. Mi ipsum faucibus vitae aliquet nec ullamcorper. Elementum facilisis leo vel fringilla. Euismod lacinia at quis risus sed vulputate odio. Vel risus commodo viverra maecenas accumsan lacus vel facilisis. Et netus et malesuada fames ac turpis egestas. Leo vel orci porta non. Porttitor eget dolor morbi non. Mi ipsum faucibus vitae aliquet nec ullamcorper sit amet.",
+            "identifier":"9781111111111",
+            "subtitle":"Subtitle 1",
+            "thumbHref":"epub_content/9781111111111/ops/images/9781111111111-th.jpg",
+            "title":"Title 1 Highlighting"},
+        {
+            "author":["Author Seven, Author Eight"],
+            "coverHref":"epub_content/9781111111112/ops/images/9781111111112.jpg",
+            "date":"2016",
+            "description":"Rhoncus est pellentesque elit ullamcorper dignissim cras. Potenti nullam ac tortor vitae purus faucibus. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Aliquam sem et tortor consequat. Est ante in nibh mauris cursus mattis molestie a. Risus in hendrerit gravida rutrum quisque non tellus orci ac. Arcu non sodales neque sodales ut etiam. Posuere lorem ipsum dolor sit amet. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Tempor id eu nisl nunc. Risus at ultrices mi tempus imperdiet nulla malesuada. Facilisi nullam vehicula ipsum a. Feugiat vivamus at augue eget arcu dictum. Iaculis at erat pellentesque adipiscing. Risus feugiat in ante metus dictum. Et odio pellentesque diam volutpat commodo sed egestas. Nec tincidunt praesent semper feugiat nibh. Dictum sit amet justo donec enim. Ultricies tristique nulla aliquet enim tortor at auctor urna.",
+            "identifier":"9781111111112",
+            "subtitle":"Subtitle 2 Highlights",
+            "thumbHref":"epub_content/9781111111112/ops/images/9781111111112-th.jpg",
+            "title":"Title 2"},
+        {
+            "author":["Author Highlight, Author Nine"],
+            "coverHref":"epub_content/9781111111113/ops/images/9781111111113.jpg",
+            "date":"2019",
+            "description":"Scelerisque felis imperdiet proin fermentum. Netus et malesuada fames ac turpis. Phasellus faucibus scelerisque eleifend donec. Velit scelerisque in dictum non consectetur a erat nam at. Ut sem nulla pharetra diam sit amet nisl suscipit. Velit ut tortor pretium viverra suspendisse potenti. Mi in nulla posuere sollicitudin. Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien. In eu mi bibendum neque. Id consectetur purus ut faucibus pulvinar elementum integer. Adipiscing elit ut aliquam purus sit amet luctus. Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Rhoncus dolor purus non enim praesent elementum. Scelerisque eleifend donec pretium vulputate sapien nec sagittis. Non tellus orci ac auctor augue mauris augue neque gravida. Massa massa ultricies mi quis hendrerit.",
+            "identifier":"9781111111113",
+            "subtitle":"Subtitle 3",
+            "thumbHref":"epub_content/9781111111113/ops/images/9781111111113-th.jpg",
+            "title":"Title 3"},
+        {
+            "author":["Author Ten, Author Eleven, Author Twelve, Author Thirteen, Author Fourteen and Author Fifteen"],
+            "coverHref":"epub_content/9781111111114/ops/images/9781111111114.jpg",
+            "date":"2000",
+            "description":"Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Aliquam ut porttitor leo a diam sollicitudin. In dictum non consectetur a. Fringilla ut morbi tincidunt augue interdum velit. Risus at ultrices mi tempus imperdiet nulla. Risus quis varius quam quisque id. Natoque penatibus et magnis dis parturient montes nascetur. Nibh praesent tristique magna sit amet purus gravida. Eget lorem dolor sed viverra ipsum nunc aliquet bibendum. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Sit amet consectetur adipiscing elit ut aliquam purus. Feugiat in ante metus dictum at tempor commodo ullamcorper. Faucibus scelerisque eleifend donec pretium vulputate sapien nec. Euismod elementum nisi quis eleifend quam adipiscing. Sem viverra aliquet eget sit amet tellus. Molestie at elementum eu facilisis. Turpis cursus in hac habitasse platea dictumst quisque. Non nisi est sit amet. Scelerisque eleifend donec pretium vulputate sapien nec.",
+            "identifier":"9781111111114",
+            "subtitle":"Subtitle 4",
+            "thumbHref":"epub_content/9781111111114/ops/images/9781111111114-th.jpg",
+            "title":"Title 4"},
+        {
+            "author":["Author Sixteen, Author Seventeen, Author Eighteen, Author Nineteen, Author Twenty"],
+            "coverHref":"epub_content/9781111111115/ops/images/9781111111115.jpg",
+            "date":"2016",
+            "description":"In dictum HIGHLIGHT non consectetur a erat nam at lectus urna. Euismod in pellentesque massa highlights placerat duis ultricies lacus. Auctor urna nunc id cursus metus aliquam eleifend Highlight mi in. Sapien pellentesque habitant morbi tristique senectus et netus et. Sed enim ut sem viverra aliquet. Tempor id eu nisl nunc mi ipsum faucibus vitae aliquet. Interdum velit laoreet id donec ultrices tincidunt arcu non. Sociis natoque penatibus et magnis dis parturient montes. Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo nulla.",
+            "identifier":"9781111111115",
+            "subtitle":"Subtitle 5",
+            "thumbHref":"epub_content/9781111111115/ops/images/9781111111115-th.jpg",
+            "title":"Title 5"}]
+    },
+    "highlighting":{
+        "9781111111111":{
+            "title":["Title 1 <mark>Highlighting</mark>"]},
+        "9781111111112":{
+            "subtitle":["Subtitle 2 <mark>Highlights</mark>"]},
+        "9781111111113":{
+            "author":["Author <mark>Highlight</mark>, Author Nine"]},
+        "9781111111114":{
+            "date":["<mark>2000</mark>"]},
+        "9781111111115":{
+            "description":["In dictum <mark>HIGHLIGHT</mark> non consectetur a erat nam at lectus urna. Euismod in pellentesque massa <mark>highlights</mark> placerat duis ultricies lacus. Auctor urna nunc id cursus metus aliquam eleifend <mark>Highlight</mark> mi in. Sapien pellentesque habitant morbi tristique senectus et netus et. Sed enim ut sem viverra aliquet. Tempor id eu nisl nunc mi ipsum faucibus vitae aliquet. Interdum velit laoreet id donec ultrices tincidunt arcu non. Sociis natoque penatibus et magnis dis parturient montes. Vulputate ut pharetra sit amet aliquam id diam maecenas. Elit duis tristique sollicitudin nibh sit amet commodo nulla."]}}}
