@@ -1,3 +1,5 @@
+import isPlainObject from 'is-plain-object';
+
 export default {
     addSelectedSubjectFacetItem( state, subjectFacetItem ) {
         if ( typeof subjectFacetItem === 'string' && subjectFacetItem !== '' ) {
@@ -21,15 +23,11 @@ export default {
         state.query = query;
     },
     setQueryFields( state, queryFields ) {
-        if ( Array.isArray( queryFields ) ) {
+        if ( isPlainObject( queryFields ) ) {
             state.queryFields = queryFields;
         } else {
-            console.error( `Invalid argument passed to queryFields: ` +
-                           ( Array.isArray( queryFields ) && queryFields.length === 0
-                               ? '[empty array]'
-                               : queryFields )
-            );
-            state.queryFields = [];
+            console.error( `Invalid argument passed to queryFields: ` + queryFields );
+            state.queryFields = {};
         }
     },
 };

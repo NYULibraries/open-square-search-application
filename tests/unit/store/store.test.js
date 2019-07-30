@@ -2,6 +2,7 @@ import Vuex from 'vuex';
 import { createLocalVue } from '@vue/test-utils';
 import cloneDeep from 'lodash.clonedeep';
 import storeConfig from '@/store/store-config';
+import { QUERY } from "../test-utils";
 
 describe( 'store-config', () => {
     const sampleSubjectFacetItems = [
@@ -129,54 +130,59 @@ describe( 'store-config', () => {
     } );
 
     describe( 'setQueryFields action', () => {
+        const QUERY_FIELDS = Object.freeze(
+            {
+                queryField1 : {
+                    highlight : true,
+                    weight    : 1,
+                },
+                queryField2 : {
+                    highlight : false,
+                    weight    : 2,
+                },
+                queryField3 : {
+                    highlight : true,
+                    weight    : 3,
+                },
+            }
+        );
+
         test( 'sets queryFields', () => {
-            const queryFields = [
-                'queryField1',
-                'queryField2',
-            ];
+            store.dispatch( 'setQueryFields', QUERY_FIELDS );
 
-            store.dispatch( 'setQueryFields', queryFields );
-
-            expect( store.getters.queryFields ).toEqual( queryFields );
+            expect( store.getters.queryFields ).toEqual( QUERY_FIELDS );
         } );
 
-        test( 'if passed undefined, set to empty array', () => {
-            const queryFields = [
-                'queryField1',
-                'queryField2',
-            ];
-
-            store.dispatch( 'setQueryFields', queryFields );
-            expect( store.getters.queryFields ).toEqual( queryFields );
+        test( 'if passed undefined, set to empty object', () => {
+            store.dispatch( 'setQueryFields', QUERY_FIELDS );
+            expect( store.getters.queryFields ).toEqual( QUERY_FIELDS );
 
             store.dispatch( 'setQueryFields', undefined );
-            expect( store.getters.queryFields ).toEqual( [] );
+            expect( store.getters.queryFields ).toEqual( {} );
         } );
 
-        test( 'if passed null, set to empty array', () => {
-            const queryFields = [
-                'queryField1',
-                'queryField2',
-            ];
-
-            store.dispatch( 'setQueryFields', queryFields );
-            expect( store.getters.queryFields ).toEqual( queryFields );
+        test( 'if passed null, set to empty object', () => {
+            store.dispatch( 'setQueryFields', QUERY_FIELDS );
+            expect( store.getters.queryFields ).toEqual( QUERY_FIELDS );
 
             store.dispatch( 'setQueryFields', null );
-            expect( store.getters.queryFields ).toEqual( [] );
+            expect( store.getters.queryFields ).toEqual( {} );
         } );
 
-        test( 'if passed string, set to empty array', () => {
-            const queryFields = [
-                'queryField1',
-                'queryField2',
-            ];
+        test( 'if passed array, set to empty object', () => {
+            store.dispatch( 'setQueryFields', QUERY_FIELDS );
+            expect( store.getters.queryFields ).toEqual( QUERY_FIELDS );
 
-            store.dispatch( 'setQueryFields', queryFields );
-            expect( store.getters.queryFields ).toEqual( queryFields );
+            store.dispatch( 'setQueryFields', Object.keys( QUERY_FIELDS ) );
+            expect( store.getters.queryFields ).toEqual( {} );
+        } );
 
-            store.dispatch( 'setQueryFields', queryFields[ 0 ] );
-            expect( store.getters.queryFields ).toEqual( [] );
+        test( 'if passed string, set to empty object', () => {
+            store.dispatch( 'setQueryFields', QUERY_FIELDS );
+            expect( store.getters.queryFields ).toEqual( QUERY_FIELDS );
+
+            store.dispatch( 'setQueryFields', 'string' );
+            expect( store.getters.queryFields ).toEqual( {} );
         } );
     } );
 } );
