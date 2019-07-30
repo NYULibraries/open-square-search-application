@@ -1,8 +1,11 @@
+import isPlainObject from 'is-plain-object';
+
 export default {
     addSelectedSubjectFacetItem( state, subjectFacetItem ) {
         if ( typeof subjectFacetItem === 'string' && subjectFacetItem !== '' ) {
             state.selectedSubjectFacetItems.push( subjectFacetItem );
         } else {
+            // eslint-disable-next-line no-console
             console.error( `Invalid argument passed to addSelectedSubjectFacetItem: ` +
                            ( subjectFacetItem === '' ? '[empty string]' : subjectFacetItem )
             );
@@ -21,15 +24,12 @@ export default {
         state.query = query;
     },
     setQueryFields( state, queryFields ) {
-        if ( Array.isArray( queryFields ) ) {
+        if ( isPlainObject( queryFields ) ) {
             state.queryFields = queryFields;
         } else {
-            console.error( `Invalid argument passed to queryFields: ` +
-                           ( Array.isArray( queryFields ) && queryFields.length === 0
-                               ? '[empty array]'
-                               : queryFields )
-            );
-            state.queryFields = [];
+            // eslint-disable-next-line no-console
+            console.error( `Invalid argument passed to queryFields: ` + queryFields );
+            state.queryFields = {};
         }
     },
 };
