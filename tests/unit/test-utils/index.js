@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 const QUERY = 'something';
 const QUERY_FIELDS = Object.freeze(
-{
+    {
         queryField1 : {
             highlight : true,
             weight    : 4,
