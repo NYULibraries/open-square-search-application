@@ -11,8 +11,6 @@ describe( 'store-config', () => {
         'subjectFacetItem3',
     ];
 
-    const sampleQuery = 'query';
-
     let store;
 
     beforeEach( () => {
@@ -123,9 +121,9 @@ describe( 'store-config', () => {
 
     describe( 'setQuery action', () => {
         test( 'sets query', () => {
-            store.dispatch( 'setQuery', sampleQuery );
+            store.dispatch( 'setQuery', QUERY );
 
-            expect( store.getters.query ).toEqual( sampleQuery );
+            expect( store.getters.query ).toEqual( QUERY );
         } );
     } );
 
