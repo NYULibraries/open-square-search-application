@@ -5,6 +5,7 @@ export default {
         if ( typeof subjectFacetItem === 'string' && subjectFacetItem !== '' ) {
             state.selectedSubjectFacetItems.push( subjectFacetItem );
         } else {
+            // eslint-disable-next-line no-console
             console.error( `Invalid argument passed to addSelectedSubjectFacetItem: ` +
                            ( subjectFacetItem === '' ? '[empty string]' : subjectFacetItem )
             );
@@ -26,6 +27,7 @@ export default {
         if ( isPlainObject( queryFields ) ) {
             state.queryFields = queryFields;
         } else {
+            // eslint-disable-next-line no-console
             console.error( `Invalid argument passed to queryFields: ` + queryFields );
             state.queryFields = {};
         }
