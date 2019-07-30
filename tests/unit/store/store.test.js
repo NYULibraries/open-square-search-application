@@ -2,7 +2,7 @@ import Vuex from 'vuex';
 import { createLocalVue } from '@vue/test-utils';
 import cloneDeep from 'lodash.clonedeep';
 import storeConfig from '@/store/store-config';
-import { QUERY } from "../test-utils";
+import { QUERY } from '../test-utils';
 
 describe( 'store-config', () => {
     const sampleSubjectFacetItems = [
