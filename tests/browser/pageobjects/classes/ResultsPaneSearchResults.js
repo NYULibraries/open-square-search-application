@@ -28,10 +28,6 @@ class ResultsPaneSearchResults {
                 .replace( /Published: /, '' );
             book.subtitle        = innerHtml( $( `${ parentElementSelector } .book-subtitle` ).getHTML() );
             book.thumbnail       = $( `${ parentElementSelector } .thumb img` ).getAttribute( 'src' );
-            // When testing Chrome, the absolute URL is returned instead of the relative path
-            if ( book.thumbnail.startsWith( 'http' ) ) {
-                book.thumbnail = new URL( book.thumbnail ).pathname;
-            }
             book.title           = innerHtml( $( `${ parentElementSelector } .book-title` ).getHTML() );
 
             books.push( book );

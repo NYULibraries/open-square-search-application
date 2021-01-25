@@ -38,7 +38,7 @@
                                 aria-hidden="true"
                             >
                                 <img
-                                    :src="`/open-square-reader/epub_content/${ result.identifier }/ops/images/${ result.identifier }-th.jpg`"
+                                    :src="getThumbnailUrl( result.identifier )"
                                     alt=""
                                     class="img-fluid"
                                 >
@@ -179,6 +179,9 @@ export default {
                     return fieldValue;
                 }
             }
+        },
+        getThumbnailUrl( isbn ) {
+            return `https://nyu-opensquare-us.imgix.net/covers/${ isbn }.jpg?auto=format&w=145`;
         },
         truncate( text, maxLength ) {
             if ( ! text ) {

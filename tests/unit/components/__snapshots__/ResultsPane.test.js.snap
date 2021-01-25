@@ -98,7 +98,7 @@ exports[`ResultsPane renders results correctly 1`] = `
             <img
               alt=""
               class="img-fluid"
-              src="/open-square-reader/epub_content/9781111111111/ops/images/9781111111111-th.jpg"
+              src="https://nyu-opensquare-us.imgix.net/covers/9781111111111.jpg?auto=format&w=145"
             />
           </a>
         </div>
@@ -174,7 +174,7 @@ exports[`ResultsPane renders results correctly 1`] = `
             <img
               alt=""
               class="img-fluid"
-              src="/open-square-reader/epub_content/9781111111112/ops/images/9781111111112-th.jpg"
+              src="https://nyu-opensquare-us.imgix.net/covers/9781111111112.jpg?auto=format&w=145"
             />
           </a>
         </div>
@@ -250,7 +250,7 @@ exports[`ResultsPane renders results correctly 1`] = `
             <img
               alt=""
               class="img-fluid"
-              src="/open-square-reader/epub_content/9781111111113/ops/images/9781111111113-th.jpg"
+              src="https://nyu-opensquare-us.imgix.net/covers/9781111111113.jpg?auto=format&w=145"
             />
           </a>
         </div>
@@ -327,7 +327,7 @@ exports[`ResultsPane renders results correctly 1`] = `
             <img
               alt=""
               class="img-fluid"
-              src="/open-square-reader/epub_content/9781111111114/ops/images/9781111111114-th.jpg"
+              src="https://nyu-opensquare-us.imgix.net/covers/9781111111114.jpg?auto=format&w=145"
             />
           </a>
         </div>
@@ -402,7 +402,7 @@ exports[`ResultsPane renders results correctly 1`] = `
             <img
               alt=""
               class="img-fluid"
-              src="/open-square-reader/epub_content/9781111111115/ops/images/9781111111115-th.jpg"
+              src="https://nyu-opensquare-us.imgix.net/covers/9781111111115.jpg?auto=format&w=145"
             />
           </a>
         </div>
