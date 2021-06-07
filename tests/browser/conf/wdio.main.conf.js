@@ -70,7 +70,20 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances           : 6,
+    // NOTE: The above description of maxInstances from WebdriverIO does not appear to be correct.
+    // maxInstances seems to determine how many total browser instances can be open at once.
+    // If there are for example 9 test files and 2 capabilities (Firefox and Chrome, say) and
+    // maxInstances is set to 9, webdriverio will open 5 Chrome windows and 4 Firefox windows.
+    //
+    // See this ticket:
+    //
+    // "Open Square search: Firefox browser tests failing in prod with connection failure errors"
+    // https://jira.nyu.edu/jira/browse/NYUP-682
+    //
+    // ...for reason why Firefox must be limited to a single instance.  We therefore
+    // set global maxInstances to 7 to allow for 6 Chrome instances, one for each
+    // test suite, and one single Firefox instance.
+    maxInstances           : 7,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -98,7 +111,14 @@ exports.config = {
             // maxInstances can get overwritten per capability. So if you have an in-house Selenium
             // grid with only 5 firefox instances available you can make sure that not more than
             // 5 instances get started at a time.
-            // maxInstances : 5,
+
+            // See this ticket:
+            //
+            // "Open Square search: Firefox browser tests failing in prod with connection failure errors"
+            // https://jira.nyu.edu/jira/browse/NYUP-682
+            //
+            // ...for reason why Firefox must be limited to a single instance.
+            maxInstances         : 1,
             //
             browserName          : 'firefox',
             'moz:firefoxOptions' : {
