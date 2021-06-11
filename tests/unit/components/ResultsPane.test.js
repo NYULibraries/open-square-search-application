@@ -23,16 +23,17 @@ describe( 'ResultsPane', () => {
 
     let wrapper;
 
-    function simulateError() {
+    async function simulateError() {
         wrapper.setProps(
             {
                 display : true,
                 error   : true,
             }
         );
+        await wrapper.vm.$nextTick();
     }
 
-    function simulateSearch() {
+    async function simulateSearch() {
         wrapper.setProps(
             {
                 display    : true,
@@ -41,13 +42,14 @@ describe( 'ResultsPane', () => {
                 results    : RESULTS.response.docs,
             }
         );
+        await wrapper.vm.$nextTick();
     }
 
     beforeEach( () => {
         wrapper = createWrapper();
     } );
 
-    test( 'renders no results found correctly', () => {
+    test( 'renders no results found correctly', async () => {
         wrapper.setProps(
             {
                 display  : true,
@@ -55,18 +57,19 @@ describe( 'ResultsPane', () => {
                 results  : [],
             }
         );
+        await wrapper.vm.$nextTick();
 
         expect( wrapper.element ).toMatchSnapshot();
     } );
 
-    test( 'renders results correctly', () => {
-        simulateSearch();
+    test( 'renders results correctly', async () => {
+        await simulateSearch();
 
         expect( wrapper.element ).toMatchSnapshot();
     } );
 
-    test( 'renders error condition correctly', () => {
-        simulateError();
+    test( 'renders error condition correctly', async () => {
+        await simulateError();
 
         expect( wrapper.element ).toMatchSnapshot();
     } );
